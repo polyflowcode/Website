@@ -483,78 +483,127 @@ main, .main-footer {
     margin-top: 4rem;
     display: grid;
     gap: 2rem;
-    grid-auto-rows: 1fr; /* Force equal height rows */
+    grid-auto-rows: 1fr; /* Equal height rows */
 }
+
+/* Mobile: 1 column */
+@media (max-width: 767px) {
+    .downloads-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+/* Tablet: 2 columns */
 @media (min-width: 768px) { 
     .downloads-grid { 
         grid-template-columns: repeat(2, 1fr); 
     } 
 }
+
+/* Desktop: 4 columns */
 @media (min-width: 1024px) { 
     .downloads-grid { 
         grid-template-columns: repeat(4, 1fr); 
     } 
 }
+
 .download-card {
     background-color: rgba(17, 24, 39, 0.5);
     border: 1px solid #374151;
     padding: 2rem;
     border-radius: 1rem;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Distribute space evenly */
-    min-height: 280px; /* Minimum height for consistency */
+    display: grid; /* Use grid instead of flex */
+    grid-template-rows: auto 1fr auto; /* Title, Description, Button */
+    gap: 1rem; /* Consistent spacing */
     transition: transform 0.3s ease-out, border-color 0.3s ease-out;
 }
-/* Mobile adjustments */
-@media (max-width: 767px) {
-    .download-card {
-        min-height: auto; /* Remove min-height on mobile */
-        padding: 1.5rem;
-    }
-}
+
 .download-card:hover {
     transform: translateY(-5px);
     border-color: #4b5563;
 }
+
 .download-title {
     font-size: 1.5rem;
     font-weight: 700;
-    margin: 0 0 1rem 0;
+    margin: 0;
+    line-height: 1.2;
 }
-/* Mobile title size */
+
+.download-description {
+    margin: 0;
+    color: #94a3b8;
+    line-height: 1.5;
+    align-self: center; /* Center in the middle grid cell */
+}
+
+/* Button styling with fixed dimensions */
+.download-card .button {
+    margin: 0;
+    padding: 0.75rem 1.5rem;
+    min-height: 48px; /* Fixed minimum height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem; /* Default font size */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Adjust button text size if needed */
+.download-card .button-primary,
+.download-card .button-light,
+.download-card .button-outline {
+    font-size: 0.875rem; /* Slightly smaller to ensure fit */
+}
+
+/* Mobile responsive adjustments */
 @media (max-width: 767px) {
+    .download-card {
+        padding: 1.5rem;
+        gap: 0.75rem;
+    }
+    
     .download-title {
         font-size: 1.25rem;
     }
-}
-.download-description {
-    margin: 0 0 1.5rem 0;
-    color: #94a3b8;
-    flex: 1; /* Take up available space */
-    display: flex;
-    align-items: center; /* Center vertically */
-    text-align: center;
-    line-height: 1.5;
-}
-/* Mobile description adjustments */
-@media (max-width: 767px) {
+    
     .download-description {
-        font-size: 0.9375rem; /* Slightly smaller on mobile */
-        margin-bottom: 1rem;
+        font-size: 0.9375rem;
+    }
+    
+    .download-card .button {
+        min-height: 44px; /* Slightly smaller on mobile */
+        padding: 0.625rem 1rem;
+        font-size: 0.875rem;
+    }
+    
+    .download-card .button-primary,
+    .download-card .button-light,
+    .download-card .button-outline {
+        font-size: 0.8125rem; /* Even smaller on mobile */
     }
 }
-.download-card .button {
-    margin-top: auto; /* Push to bottom */
-    width: 100%; /* Ensure full width */
-    white-space: nowrap; /* Prevent text wrapping in buttons */
+
+/* Ensure all buttons have the same base styling */
+.downloads-grid .button {
+    width: 100%;
+    box-sizing: border-box;
+    transition: all 0.2s ease-out;
 }
-/* Mobile button adjustments */
+
+/* Override any font-size changes from parent button classes */
+.downloads-grid .button-light {
+    font-size: 0.875rem !important;
+    padding: 0.75rem 1.5rem !important;
+}
+
 @media (max-width: 767px) {
-    .download-card .button {
-        padding: 0.625rem 1.25rem; /* Slightly smaller padding */
-        font-size: 0.875rem; /* Smaller font size */
+    .downloads-grid .button-light {
+        font-size: 0.8125rem !important;
+        padding: 0.625rem 1rem !important;
     }
 }
 
