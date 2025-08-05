@@ -125,11 +125,13 @@ main, .main-footer {
     }
     .main-nav a {
         color: #d1d5db; /* text-gray-300 */
-        transition: color 0.2s;
+        transition: color 0.2s, transform 0.2s;
         text-decoration: none;
+        display: inline-block;
     }
     .main-nav a:hover {
         color: #ffffff;
+        transform: translateY(-2px);
     }
 }
 
@@ -173,9 +175,15 @@ main, .main-footer {
     font-weight: 600;
     padding: 0.75rem 1.5rem;
     border-radius: 0.5rem;
-    transition: background-color 0.2s, border-color 0.2s;
+    transition: background-color 0.2s, border-color 0.2s, transform 0.2s ease-out;
     text-decoration: none;
     justify-content: center;
+}
+.button:hover {
+    transform: scale(1.05);
+}
+.button:active {
+    transform: scale(0.98);
 }
 .button-primary {
     background-color: #6366f1; /* bg-indigo-500 */
@@ -199,6 +207,7 @@ main, .main-footer {
 }
 .button-outline:hover {
     background-color: #1f2937; /* hover:bg-gray-800 */
+    border-color: #6b7280;
 }
 .header-button {
     display: none;
@@ -286,6 +295,11 @@ main, .main-footer {
     padding: 2rem;
     border-radius: 1rem;
     text-align: left;
+    transition: transform 0.3s ease-out, border-color 0.3s ease-out;
+}
+.feature-card:hover {
+    transform: translateY(-5px);
+    border-color: #4b5563;
 }
 .feature-icon-wrapper {
     width: 3rem;
@@ -360,6 +374,11 @@ main, .main-footer {
     display: flex;
     align-items: flex-start;
     gap: 1.5rem;
+    transition: transform 0.3s ease-out, border-color 0.3s ease-out;
+}
+.use-case-card:hover {
+    transform: translateY(-5px);
+    border-color: #4b5563;
 }
 .use-case-icon-wrapper {
     width: 3rem;
@@ -414,6 +433,11 @@ main, .main-footer {
     align-items: center;
     gap: 2rem;
     overflow: hidden;
+    transition: transform 0.3s ease-out, border-color 0.3s ease-out;
+}
+.research-card:hover {
+    transform: translateY(-5px);
+    border-color: #4b5563;
 }
 @media (min-width: 1024px) {
     .research-card {
@@ -470,6 +494,11 @@ main, .main-footer {
     text-align: center;
     display: flex;
     flex-direction: column;
+    transition: transform 0.3s ease-out, border-color 0.3s ease-out;
+}
+.download-card:hover {
+    transform: translateY(-5px);
+    border-color: #4b5563;
 }
 .download-title {
     font-size: 1.5rem;
@@ -518,10 +547,12 @@ main, .main-footer {
 }
 .social-links a {
     color: inherit;
-    transition: color 0.2s;
+    transition: color 0.2s, transform 0.2s;
+    display: inline-block;
 }
 .social-links a:hover {
     color: #ffffff;
+    transform: scale(1.1);
 }
 .social-links svg {
     width: 1.5rem;
