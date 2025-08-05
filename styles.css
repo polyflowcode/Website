@@ -483,10 +483,18 @@ main, .main-footer {
     margin-top: 4rem;
     display: grid;
     gap: 2rem;
-    grid-auto-rows: 1fr; /* Force all rows to have equal height */
+    grid-auto-rows: 1fr; /* Force equal height rows */
 }
-@media (min-width: 768px) { .downloads-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 1024px) { .downloads-grid { grid-template-columns: repeat(4, 1fr); } }
+@media (min-width: 768px) { 
+    .downloads-grid { 
+        grid-template-columns: repeat(2, 1fr); 
+    } 
+}
+@media (min-width: 1024px) { 
+    .downloads-grid { 
+        grid-template-columns: repeat(4, 1fr); 
+    } 
+}
 .download-card {
     background-color: rgba(17, 24, 39, 0.5);
     border: 1px solid #374151;
@@ -495,8 +503,16 @@ main, .main-footer {
     text-align: center;
     display: flex;
     flex-direction: column;
-    min-height: 0; /* Allow flex items to shrink */
+    justify-content: space-between; /* Distribute space evenly */
+    min-height: 280px; /* Minimum height for consistency */
     transition: transform 0.3s ease-out, border-color 0.3s ease-out;
+}
+/* Mobile adjustments */
+@media (max-width: 767px) {
+    .download-card {
+        min-height: auto; /* Remove min-height on mobile */
+        padding: 1.5rem;
+    }
 }
 .download-card:hover {
     transform: translateY(-5px);
@@ -505,18 +521,41 @@ main, .main-footer {
 .download-title {
     font-size: 1.5rem;
     font-weight: 700;
-    margin: 0 0 0.5rem 0; /* Reset margins for consistency */
+    margin: 0 0 1rem 0;
+}
+/* Mobile title size */
+@media (max-width: 767px) {
+    .download-title {
+        font-size: 1.25rem;
+    }
 }
 .download-description {
-    margin: 0.5rem 0 0 0; /* Reset top margin */
+    margin: 0 0 1.5rem 0;
     color: #94a3b8;
-    flex: 1 1 auto; /* Better flex properties */
+    flex: 1; /* Take up available space */
     display: flex;
-    align-items: center; /* Center description vertically in its space */
+    align-items: center; /* Center vertically */
+    text-align: center;
+    line-height: 1.5;
+}
+/* Mobile description adjustments */
+@media (max-width: 767px) {
+    .download-description {
+        font-size: 0.9375rem; /* Slightly smaller on mobile */
+        margin-bottom: 1rem;
+    }
 }
 .download-card .button {
-    margin-top: 1.5rem; /* Fixed margin from description */
-    align-self: stretch; /* Ensure button stretches full width */
+    margin-top: auto; /* Push to bottom */
+    width: 100%; /* Ensure full width */
+    white-space: nowrap; /* Prevent text wrapping in buttons */
+}
+/* Mobile button adjustments */
+@media (max-width: 767px) {
+    .download-card .button {
+        padding: 0.625rem 1.25rem; /* Slightly smaller padding */
+        font-size: 0.875rem; /* Smaller font size */
+    }
 }
 
 /* --- Contact & Footer --- */
