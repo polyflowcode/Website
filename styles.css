@@ -10,7 +10,7 @@ body {
 
 main, .main-footer {
     position: relative;
-    z-index: 1; /* Ensures main content and footer are above the particle canvas */
+    /* z-index is no longer needed here */
 }
 
 .container {
@@ -79,8 +79,8 @@ main, .main-footer {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 0; /* Set to 0 to sit behind content but above body background */
-    pointer-events: none; /* Non-interactive */
+    z-index: 99; /* Set to a high value to be in front of everything */
+    pointer-events: none; /* Crucially, makes the canvas non-interactive */
 }
 
 /* --- Header --- */
@@ -468,6 +468,8 @@ main, .main-footer {
     padding: 2rem;
     border-radius: 1rem;
     text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 .download-title {
     font-size: 1.5rem;
@@ -476,7 +478,7 @@ main, .main-footer {
 .download-description {
     margin-top: 0.5rem;
     color: #94a3b8;
-    height: 4rem; /* h-16 */
+    flex-grow: 1; /* This makes the description expand */
 }
 .download-card .button {
     margin-top: 1.5rem;
