@@ -322,9 +322,9 @@
                 this.y = mouse.y;
                 // Make particles smaller
                 this.size = Math.random() * 1 + 0.5;
-                // Make particle movement less explosive
-                this.speedX = Math.random() * 1 - 0.5;
-                this.speedY = Math.random() * 1 - 0.5;
+                // Reduce speed by 40% (multiply by 0.6)
+                this.speedX = (Math.random() * 1 - 0.5) * 0.6;
+                this.speedY = (Math.random() * 1 - 0.5) * 0.6;
                 this.color = colors[Math.floor(Math.random() * colors.length)];
                 this.life = 0;
                 this.maxLife = Math.random() * 50 + 30;
@@ -335,7 +335,8 @@
                 this.life++;
             }
             draw() {
-                ctx.globalAlpha = 1 - (this.life / this.maxLife);
+                // Reduce max opacity by 20% (multiply by 0.8)
+                ctx.globalAlpha = (1 - (this.life / this.maxLife)) * 0.8;
                 ctx.fillStyle = this.color;
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);

@@ -597,5 +597,5 @@ main, .main-footer {
 }
 .fade-in-up.is-visible {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) ;
 }
