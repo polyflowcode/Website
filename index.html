@@ -22,10 +22,10 @@
             </a>
             <nav class="main-nav">
                 <a href="#home">Home</a>
+                <a href="#platform">Platform</a>
                 <a href="#industries">Industries</a>
+                <a href="#offerings">Solutions</a>
                 <a href="#about">About</a>
-                <a href="#products">Products</a>
-                <a href="#offerings">Offerings</a>
             </nav>
             <a href="#contact" class="button button-primary header-button">Get in Touch</a>
             <button id="mobile-menu-button" class="mobile-menu-toggle">
@@ -35,17 +35,15 @@
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="mobile-nav">
             <a href="#home">Home</a>
+            <a href="#platform">Platform</a>
             <a href="#industries">Industries</a>
+            <a href="#offerings">Solutions</a>
             <a href="#about">About</a>
-            <a href="#products">Products</a>
-            <a href="#offerings">Offerings</a>
             <a href="#contact" class="button button-primary">Get in Touch</a>
         </div>
     </header>
 
     <main>
-        <!-- HOMEPAGE -->
-        
         <!-- Section 1: Hero -->
         <section id="home" class="hero">
             <div class="container hero-content">
@@ -56,7 +54,7 @@
                     The 3D world is exploding with dynamic data and mesh sequences. Polyflow is the foundational platform for compressing, streaming, and decoding complex Time-Varying Meshes (TVMs). We believe that TVMs will provide a foundation for breakthroughs in the next generations of entertainment, engineering, and health-care.
                 </p>
                 <div class="hero-actions fade-in-up">
-                    <a href="#products" class="button button-light">Explore Our Products</a>
+                    <a href="#offerings" class="button button-light">Explore Our Products</a>
                     <a href="#contact" class="button button-outline">Get in Touch</a>
                 </div>
                 
@@ -71,8 +69,42 @@
             </div>
         </section>
 
+        <!-- Section 2: Platform Features (moved from old product page) -->
+        <section id="platform" class="section-padding section-glow">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-title fade-in-up">Lowering the usage barrier for 3D model sequences</h2>
+                    <p class="section-subtitle fade-in-up">Our TVM algorithm provides an end-to-end solution for the dynamic data pipeline, making traditionally hard to work with TVM sequences approachable</p>
+                </div>
+                
+                <div class="feature-grid">
+                    <div class="feature-card fade-in-up">
+                        <div class="feature-icon-wrapper bg-indigo">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="feature-icon text-indigo" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 16v-2m8-8h2M4 12H2m16.938 5.938l1.414 1.414M2.646 2.646l1.414 1.414m12.728 0l1.414-1.414M5.06 18.938l-1.414 1.414M12 18a6 6 0 100-12 6 6 0 000 12z" /></svg>
+                        </div>
+                        <h3 class="feature-title">Compress</h3>
+                        <p class="feature-description">Achieve industry-leading compression ratios on complex TVM sequences, drastically reducing storage costs and file transfer times.</p>
+                    </div>
+                    <div class="feature-card fade-in-up" style="transition-delay: 150ms;">
+                        <div class="feature-icon-wrapper bg-pink">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="feature-icon text-pink" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                        </div>
+                        <h3 class="feature-title">Transfer</h3>
+                        <p class="feature-description">Our lightweight format enables efficient, low-latency data transfer, making high-fidelity streaming and real-time previews possible.</p>
+                    </div>
+                    <div class="feature-card fade-in-up" style="transition-delay: 300ms;">
+                        <div class="feature-icon-wrapper bg-blue">
+                           <svg xmlns="http://www.w3.org/2000/svg" class="feature-icon text-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M9 5a2 2 0 00-2 2v10a2 2 0 002 2h6a2 2 0 002-2V7a2 2 0 00-2-2H9z" /></svg>
+                        </div>
+                        <h3 class="feature-title">Real-time Decode</h3>
+                        <p class="feature-description">Leverage our Unity plugin to play back complex encoded sequences in real-time, even on standalone XR headsets like the Quest.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Section 3: Industries -->
-        <section id="industries" class="section-padding section-glow">
+        <section id="industries" class="section-padding bg-black">
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-title fade-in-up">Powering the Future of Every Industry</h2>
@@ -119,7 +151,70 @@
             </div>
         </section>
 
-        <!-- Section 4: About -->
+        <!-- Section 4: Offerings -->
+        <section id="offerings" class="section-padding section-glow">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-title fade-in-up">Our Solutions</h2>
+                    <p class="section-subtitle fade-in-up">Comprehensive tools and services built on the Polyflow platform</p>
+                </div>
+                <div class="offerings-grid">
+                    <div class="offering-card-new fade-in-up">
+                        <div class="offering-icon-wrapper">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="offering-icon">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+                            </svg>
+                        </div>
+                        <div class="offering-content">
+                            <h3 class="offering-title">Cloud Storage Platform</h3>
+                            <p class="offering-description">Store your large complex mesh sequences in our cloud solution powered by industry-leading compression. Reduce storage usage by up to 60%.</p>
+                            <a href="#" class="offering-link">Learn more →</a>
+                        </div>
+                    </div>
+
+                    <div class="offering-card-new fade-in-up" style="transition-delay: 150ms;">
+                        <div class="offering-icon-wrapper">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="offering-icon">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <div class="offering-content">
+                            <h3 class="offering-title">Facial Motion Capture</h3>
+                            <p class="offering-description">Revolutionary volume tracking for dynamic mesh displacement, reducing artist workloads compared to traditional topology-based methods.</p>
+                            <a href="#" class="offering-link">Learn more →</a>
+                        </div>
+                    </div>
+
+                    <div class="offering-card-new fade-in-up" style="transition-delay: 300ms;">
+                        <div class="offering-icon-wrapper">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="offering-icon">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2 1M4 7l2-1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5" />
+                            </svg>
+                        </div>
+                        <div class="offering-content">
+                            <h3 class="offering-title">Unity Mesh Playback</h3>
+                            <p class="offering-description">Real-time playback plugin for viewing complex encoded mesh sequences, optimized for standalone XR headsets like Quest.</p>
+                            <a href="#" class="offering-link">Learn more →</a>
+                        </div>
+                    </div>
+
+                    <div class="offering-card-new fade-in-up" style="transition-delay: 450ms;">
+                        <div class="offering-icon-wrapper">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="offering-icon">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+                            </svg>
+                        </div>
+                        <div class="offering-content">
+                            <h3 class="offering-title">Hardware Decoder</h3>
+                            <p class="offering-description">Custom decoder chip for manufacturers enabling device-native encoding and decoding of mesh sequences.</p>
+                            <a href="#" class="offering-link">Learn more →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: About -->
         <section id="about" class="section-padding bg-black">
             <div class="container text-center">
                  <h2 class="section-title fade-in-up">Born from Research, Built for Impact</h2>
@@ -149,73 +244,6 @@
                     </div>
                     <div class="research-image-wrapper">
                         <img src="https://placehold.co/600x400/111827/9ca3af?text=Research+Paper+Visual" alt="Visual representation of the research paper" class="research-image" onerror="this.onerror=null;this.src='https://placehold.co/600x400/111827/9ca3af?text=Research+Paper+Visual';">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- PRODUCT PAGE -->
-        
-        <!-- Section 5: Platform Features -->
-        <section id="products" class="section-padding bg-black">
-            <div class="container">
-                <div class="text-center">
-                    <h2 class="section-title fade-in-up">Lowering the usage barrier for 3D model sequences</h2>
-                    <p class="section-subtitle fade-in-up">Our TVM algorithm provides an end-to-end solution for the dynamic data pipeline, making traditionally hard to work with TVM sequences approachable</p>
-                </div>
-                
-                <div class="feature-grid">
-                    <div class="feature-card fade-in-up">
-                        <div class="feature-icon-wrapper bg-indigo">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="feature-icon text-indigo" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 16v-2m8-8h2M4 12H2m16.938 5.938l1.414 1.414M2.646 2.646l1.414 1.414m12.728 0l1.414-1.414M5.06 18.938l-1.414 1.414M12 18a6 6 0 100-12 6 6 0 000 12z" /></svg>
-                        </div>
-                        <h3 class="feature-title">Compress</h3>
-                        <p class="feature-description">Achieve industry-leading compression ratios on complex TVM sequences, drastically reducing storage costs and file transfer times.</p>
-                    </div>
-                    <div class="feature-card fade-in-up" style="transition-delay: 150ms;">
-                        <div class="feature-icon-wrapper bg-pink">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="feature-icon text-pink" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
-                        </div>
-                        <h3 class="feature-title">Transfer</h3>
-                        <p class="feature-description">Our lightweight format enables efficient, low-latency data transfer, making high-fidelity streaming and real-time previews possible.</p>
-                    </div>
-                    <div class="feature-card fade-in-up" style="transition-delay: 300ms;">
-                        <div class="feature-icon-wrapper bg-blue">
-                           <svg xmlns="http://www.w3.org/2000/svg" class="feature-icon text-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M9 5a2 2 0 00-2 2v10a2 2 0 002 2h6a2 2 0 002-2V7a2 2 0 00-2-2H9z" /></svg>
-                        </div>
-                        <h3 class="feature-title">Real-time Decode</h3>
-                        <p class="feature-description">Leverage our Unity plugin to play back complex encoded sequences in real-time, even on standalone XR headsets like the Quest.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 6: Offerings -->
-        <section id="offerings" class="section-padding section-glow">
-            <div class="container">
-                <div class="text-center">
-                    <h2 class="section-title fade-in-up">Offerings</h2>
-                </div>
-                <div class="offerings-grid">
-                    <div class="offering-card fade-in-up">
-                        <h3 class="offering-title">Cloud based storage</h3>
-                        <p class="offering-description">Store your large complex mesh sequences in our cloud based solution powered by our industry leading compression. Significantly reduce your storage usage with file savings up to 60%.</p>
-                        <a href="#" class="button button-outline">More info</a>
-                    </div>
-                    <div class="offering-card fade-in-up" style="transition-delay: 150ms;">
-                        <h3 class="offering-title">Facial Motion Capture</h3>
-                        <p class="offering-description">Our novel use of volume tracking for dynamic mesh displacement allows for a new type of facial animation and motion capture diverting from traditional methods reliant on fixed model topology and significantly reducing artist workloads.</p>
-                        <a href="#" class="button button-outline">More info</a>
-                    </div>
-                    <div class="offering-card fade-in-up" style="transition-delay: 300ms;">
-                        <h3 class="offering-title">Unity Mesh Playback</h3>
-                        <p class="offering-description">Leverage our Unity playback plugin to view complex encoded mesh sequences in real-time, even on standalone XR headsets like the Quest.</p>
-                        <a href="#" class="button button-outline">More info</a>
-                    </div>
-                    <div class="offering-card fade-in-up" style="transition-delay: 450ms;">
-                        <h3 class="offering-title">Hardware Accelerated Decoder</h3>
-                        <p class="offering-description">Our hardware decoder chip is available to manufacturers to allow for device native decoding and encoding for mesh sequences.</p>
-                        <a href="#" class="button button-outline">More info</a>
                     </div>
                 </div>
             </div>
