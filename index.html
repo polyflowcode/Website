@@ -21,128 +21,71 @@
                 <span class="gradient-text">Poly</span><span class="logo-white">flow</span>
             </a>
             <nav class="main-nav">
-                <a href="#platform">Platform</a>
-                <a href="#product">Product</a>
-                <a href="#use-cases">Use Cases</a>
+                <a href="#home">Home</a>
+                <a href="#industries">Industries</a>
                 <a href="#about">About</a>
-                <a href="#downloads">Downloads</a>
+                <a href="#products">Products</a>
+                <a href="#offerings">Offerings</a>
             </nav>
-            <a href="#downloads" class="button button-primary header-button">Get Started</a>
+            <a href="#contact" class="button button-primary header-button">Get in Touch</a>
             <button id="mobile-menu-button" class="mobile-menu-toggle">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
         </div>
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="mobile-nav">
-            <a href="#platform">Platform</a>
-            <a href="#product">Product</a>
-            <a href="#use-cases">Use Cases</a>
+            <a href="#home">Home</a>
+            <a href="#industries">Industries</a>
             <a href="#about">About</a>
-            <a href="#downloads">Downloads</a>
-            <a href="#downloads" class="button button-primary">Get Started</a>
+            <a href="#products">Products</a>
+            <a href="#offerings">Offerings</a>
+            <a href="#contact" class="button button-primary">Get in Touch</a>
         </div>
     </header>
 
     <main>
-        <!-- Hero Section -->
-        <section class="hero">
+        <!-- HOMEPAGE -->
+        
+        <!-- Section 1: Hero -->
+        <section id="home" class="hero">
             <div class="container hero-content">
                 <h1 class="hero-title fade-in-up">
                     The Codec for <span class="gradient-text">Dynamic Reality</span>
                 </h1>
                 <p class="hero-subtitle fade-in-up">
-                    The 3D world is exploding with dynamic data. Polyflow is the foundational platform for compressing, streaming, and decoding complex Time-Varying Meshes (TVMs) for the next generation of immersive experiences.
+                    The 3D world is exploding with dynamic data and mesh sequences. Polyflow is the foundational platform for compressing, streaming, and decoding complex Time-Varying Meshes (TVMs). We believe that TVMs will provide a foundation for breakthroughs in the next generations of entertainment, engineering, and health-care.
                 </p>
                 <div class="hero-actions fade-in-up">
-                    <a href="#product" class="button button-light">See it in Action</a>
-                    <a href="#platform" class="button button-outline">Explore the Platform</a>
+                    <a href="#products" class="button button-light">Explore Our Products</a>
+                    <a href="#contact" class="button button-outline">Get in Touch</a>
                 </div>
-                <div class="hero-video-wrapper fade-in-up">
-                    <video class="hero-video" autoplay loop muted playsinline
-                        src="https://assets.mixkit.co/videos/preview/mixkit-background-of-a-geometric-grid-of-points-and-lines-33989-large.mp4"
-                        onerror="this.style.display='none'; document.getElementById('video-fallback').style.display='flex';">
-                    </video>
-                    <div id="video-fallback" class="video-fallback">
-                        <p>Visual preview not available.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Platform Section -->
-        <section id="platform" class="section-padding section-glow">
-            <div class="container text-center">
-                <h2 class="section-title fade-in-up">The Foundation for Dynamic 3D</h2>
-                <p class="section-subtitle fade-in-up">Our proprietary TVMC algorithm provides an end-to-end solution for the dynamic data pipeline, from capture to final render.</p>
                 
-                <div class="feature-grid">
-                    <!-- Card 1: Compress -->
-                    <div class="feature-card fade-in-up">
-                        <div class="feature-icon-wrapper bg-indigo">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="feature-icon text-indigo" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 16v-2m8-8h2M4 12H2m16.938 5.938l1.414 1.414M2.646 2.646l1.414 1.414m12.728 0l1.414-1.414M5.06 18.938l-1.414 1.414M12 18a6 6 0 100-12 6 6 0 000 12z" /></svg>
-                        </div>
-                        <h3 class="feature-title">Compress</h3>
-                        <p class="feature-description">Achieve industry-leading compression ratios on complex TVM sequences, drastically reducing storage costs and file transfer times.</p>
-                    </div>
-                    <!-- Card 2: Transfer -->
-                    <div class="feature-card fade-in-up" style="transition-delay: 150ms;">
-                        <div class="feature-icon-wrapper bg-pink">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="feature-icon text-pink" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
-                        </div>
-                        <h3 class="feature-title">Transfer</h3>
-                        <p class="feature-description">Our lightweight format enables efficient, low-latency data transfer, making high-fidelity streaming and real-time previews possible.</p>
-                    </div>
-                    <!-- Card 3: Decode -->
-                    <div class="feature-card fade-in-up" style="transition-delay: 300ms;">
-                        <div class="feature-icon-wrapper bg-blue">
-                           <svg xmlns="http://www.w3.org/2000/svg" class="feature-icon text-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M9 5a2 2 0 00-2 2v10a2 2 0 002 2h6a2 2 0 002-2V7a2 2 0 00-2-2H9z" /></svg>
-                        </div>
-                        <h3 class="feature-title">Real-time Decode</h3>
-                        <p class="feature-description">Leverage our hardware-accelerated Unity plugin to play back complex encoded sequences in real-time, even on standalone XR headsets like the Quest.</p>
+                <!-- Video/Gradient Section -->
+                <div class="hero-video-wrapper fade-in-up">
+                    <div class="animated-gradient-bg">
+                        <div class="gradient-orb gradient-orb-1"></div>
+                        <div class="gradient-orb gradient-orb-2"></div>
+                        <div class="gradient-orb gradient-orb-3"></div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Product Showcase Section -->
-        <section id="product" class="section-padding bg-black">
-            <div class="container">
-                <div class="text-center">
-                    <p class="eyebrow-text fade-in-up">Our First Product</p>
-                    <h2 class="section-title fade-in-up"><span class="gradient-text">Polyflow Capture</span></h2>
-                    <p class="section-subtitle fade-in-up">The first tool built on the Polyflow platform. Capture cinematic facial performance on your phone and get a clean, high-fidelity result directly in your 3D software.</p>
-                </div>
-
-                <div class="product-video-wrapper fade-in-up">
-                    <div class="product-video-aspect">
-                         <video class="product-video" autoplay loop muted playsinline
-                            src="https://assets.mixkit.co/videos/preview/mixkit-animation-of-a-human-head-with-a-brain-of-glowing-dots-42220-large.mp4"
-                            onerror="this.style.display='none'; document.getElementById('product-video-fallback').style.display='flex';">
-                        </video>
-                        <div id="product-video-fallback" class="video-fallback">
-                            <p>Product demo not available.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Use Cases Section -->
-        <section id="use-cases" class="section-padding section-glow">
+        <!-- Section 3: Industries -->
+        <section id="industries" class="section-padding section-glow">
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-title fade-in-up">Powering the Future of Every Industry</h2>
-                    <p class="section-subtitle fade-in-up">Polyflow is a versatile platform designed to solve the dynamic data problem wherever it exists.</p>
+                    <p class="section-subtitle fade-in-up">Polyflow is a versatile solution, designed to improve usability of 3D sequences everywhere.</p>
                 </div>
                 <div class="use-case-grid">
-                    <!-- Use Case Cards -->
                     <div class="use-case-card fade-in-up">
                         <div class="use-case-icon-wrapper bg-green">
                            <svg xmlns="http://www.w3.org/2000/svg" class="use-case-icon text-green" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4" /></svg>
                         </div>
                         <div>
                             <h4 class="use-case-title">Animation & VFX</h4>
-                            <p class="use-case-description">Enable high-fidelity character performance, complex cloth simulations, and dynamic environmental effects with manageable data pipelines.</p>
+                            <p class="use-case-description">Enable high-fidelity character performance motion capture, complex cloth simulations, and dynamic environmental effects with manageable data pipelines.</p>
                         </div>
                     </div>
                     <div class="use-case-card fade-in-up" style="transition-delay: 150ms;">
@@ -176,7 +119,7 @@
             </div>
         </section>
 
-        <!-- About Section -->
+        <!-- Section 4: About -->
         <section id="about" class="section-padding bg-black">
             <div class="container text-center">
                  <h2 class="section-title fade-in-up">Born from Research, Built for Impact</h2>
@@ -211,32 +154,68 @@
             </div>
         </section>
 
-        <!-- Downloads Section -->
-        <section id="downloads" class="section-padding">
-            <div class="container text-center">
-                <h2 class="section-title fade-in-up">Get Started with Polyflow</h2>
-                <p class="section-subtitle fade-in-up">Download our tools and plugins to start creating, or dive into the code and explore the core technology.</p>
-                <div class="downloads-grid">
-                    <!-- Download Cards -->
-                    <div class="download-card fade-in-up">
-                        <h3 class="download-title">Polyflow Capture App</h3>
-                        <p class="download-description">The simple iOS app for capturing raw facial performance data.</p>
-                        <a href="#" class="button button-light full-width">Download on App Store</a>
+        <!-- PRODUCT PAGE -->
+        
+        <!-- Section 5: Platform Features -->
+        <section id="products" class="section-padding bg-black">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-title fade-in-up">Lowering the usage barrier for 3D model sequences</h2>
+                    <p class="section-subtitle fade-in-up">Our TVM algorithm provides an end-to-end solution for the dynamic data pipeline, making traditionally hard to work with TVM sequences approachable</p>
+                </div>
+                
+                <div class="feature-grid">
+                    <div class="feature-card fade-in-up">
+                        <div class="feature-icon-wrapper bg-indigo">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="feature-icon text-indigo" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 16v-2m8-8h2M4 12H2m16.938 5.938l1.414 1.414M2.646 2.646l1.414 1.414m12.728 0l1.414-1.414M5.06 18.938l-1.414 1.414M12 18a6 6 0 100-12 6 6 0 000 12z" /></svg>
+                        </div>
+                        <h3 class="feature-title">Compress</h3>
+                        <p class="feature-description">Achieve industry-leading compression ratios on complex TVM sequences, drastically reducing storage costs and file transfer times.</p>
                     </div>
-                    <div class="download-card fade-in-up" style="transition-delay: 150ms;">
-                        <h3 class="download-title">Blender Plugin</h3>
-                        <p class="download-description">The core processing and retargeting tool for Blender artists.</p>
-                        <a href="#" class="button button-primary full-width">Get on Blender Market</a>
+                    <div class="feature-card fade-in-up" style="transition-delay: 150ms;">
+                        <div class="feature-icon-wrapper bg-pink">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="feature-icon text-pink" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                        </div>
+                        <h3 class="feature-title">Transfer</h3>
+                        <p class="feature-description">Our lightweight format enables efficient, low-latency data transfer, making high-fidelity streaming and real-time previews possible.</p>
                     </div>
-                    <div class="download-card fade-in-up" style="transition-delay: 300ms;">
-                        <h3 class="download-title">Unity Playback SDK</h3>
-                        <p class="download-description">Our real-time decoder for playing back compressed sequences in Unity.</p>
-                        <a href="#" class="button button-outline full-width">View on Asset Store</a>
+                    <div class="feature-card fade-in-up" style="transition-delay: 300ms;">
+                        <div class="feature-icon-wrapper bg-blue">
+                           <svg xmlns="http://www.w3.org/2000/svg" class="feature-icon text-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M9 5a2 2 0 00-2 2v10a2 2 0 002 2h6a2 2 0 002-2V7a2 2 0 00-2-2H9z" /></svg>
+                        </div>
+                        <h3 class="feature-title">Real-time Decode</h3>
+                        <p class="feature-description">Leverage our Unity plugin to play back complex encoded sequences in real-time, even on standalone XR headsets like the Quest.</p>
                     </div>
-                    <div class="download-card fade-in-up" style="transition-delay: 450ms;">
-                        <h3 class="download-title">Core Source Code</h3>
-                        <p class="download-description">Explore our open-source repositories, contribute, and build with us.</p>
-                        <a href="#" class="button button-outline full-width">Explore on GitHub</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Offerings -->
+        <section id="offerings" class="section-padding section-glow">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-title fade-in-up">Offerings</h2>
+                </div>
+                <div class="offerings-grid">
+                    <div class="offering-card fade-in-up">
+                        <h3 class="offering-title">Cloud based storage</h3>
+                        <p class="offering-description">Store your large complex mesh sequences in our cloud based solution powered by our industry leading compression. Significantly reduce your storage usage with file savings up to 60%.</p>
+                        <a href="#" class="button button-outline">More info</a>
+                    </div>
+                    <div class="offering-card fade-in-up" style="transition-delay: 150ms;">
+                        <h3 class="offering-title">Facial Motion Capture</h3>
+                        <p class="offering-description">Our novel use of volume tracking for dynamic mesh displacement allows for a new type of facial animation and motion capture diverting from traditional methods reliant on fixed model topology and significantly reducing artist workloads.</p>
+                        <a href="#" class="button button-outline">More info</a>
+                    </div>
+                    <div class="offering-card fade-in-up" style="transition-delay: 300ms;">
+                        <h3 class="offering-title">Unity Mesh Playback</h3>
+                        <p class="offering-description">Leverage our Unity playback plugin to view complex encoded mesh sequences in real-time, even on standalone XR headsets like the Quest.</p>
+                        <a href="#" class="button button-outline">More info</a>
+                    </div>
+                    <div class="offering-card fade-in-up" style="transition-delay: 450ms;">
+                        <h3 class="offering-title">Hardware Accelerated Decoder</h3>
+                        <p class="offering-description">Our hardware decoder chip is available to manufacturers to allow for device native decoding and encoding for mesh sequences.</p>
+                        <a href="#" class="button button-outline">More info</a>
                     </div>
                 </div>
             </div>
@@ -259,7 +238,7 @@
             <p>&copy; 2025 Polyflow Inc. &bull; A <a href="#" class="link-highlight">SINRG Labs</a> Project at Northeastern University</p>
             <div class="social-links">
                  <a href="#" aria-label="Twitter">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.223.085a4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.223.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
                 </a>
                 <a href="#" aria-label="LinkedIn">
                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>

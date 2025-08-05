@@ -478,136 +478,133 @@ main, .main-footer {
 }
 
 
-/* --- Downloads Section --- */
-.downloads-grid {
+/* --- Animated Gradient Background --- */
+.animated-gradient-bg {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #0a0a0a;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.gradient-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.6;
+    animation: float 20s infinite ease-in-out;
+}
+
+.gradient-orb-1 {
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(135deg, #a78bfa, #818cf8);
+    top: -200px;
+    left: -100px;
+    animation-delay: 0s;
+}
+
+.gradient-orb-2 {
+    width: 350px;
+    height: 350px;
+    background: linear-gradient(135deg, #f472b6, #ec4899);
+    bottom: -150px;
+    right: -100px;
+    animation-delay: 5s;
+}
+
+.gradient-orb-3 {
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(135deg, #60a5fa, #3b82f6);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation-delay: 10s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateX(0) translateY(0) scale(1);
+    }
+    25% {
+        transform: translateX(50px) translateY(-30px) scale(1.1);
+    }
+    50% {
+        transform: translateX(-30px) translateY(40px) scale(0.9);
+    }
+    75% {
+        transform: translateX(40px) translateY(30px) scale(1.05);
+    }
+}
+
+/* --- Offerings Section --- */
+.offerings-grid {
     margin-top: 4rem;
     display: grid;
     gap: 2rem;
-    grid-auto-rows: 1fr; /* Equal height rows */
+    grid-auto-rows: 1fr;
 }
 
-/* Mobile: 1 column */
-@media (max-width: 767px) {
-    .downloads-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
+@media (min-width: 768px) {
+    .offerings-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
-/* Tablet: 2 columns */
-@media (min-width: 768px) { 
-    .downloads-grid { 
-        grid-template-columns: repeat(2, 1fr); 
-    } 
+@media (min-width: 1024px) {
+    .offerings-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
-/* Desktop: 4 columns */
-@media (min-width: 1024px) { 
-    .downloads-grid { 
-        grid-template-columns: repeat(4, 1fr); 
-    } 
-}
-
-.download-card {
+.offering-card {
     background-color: rgba(17, 24, 39, 0.5);
     border: 1px solid #374151;
-    padding: 2rem;
+    padding: 2.5rem;
     border-radius: 1rem;
-    text-align: center;
-    display: grid; /* Use grid for internal layout */
-    grid-template-rows: auto minmax(80px, 1fr) auto; /* Fixed structure */
-    gap: 1rem;
-    min-height: 300px; /* Minimum height for consistency */
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 1.5rem;
     transition: transform 0.3s ease-out, border-color 0.3s ease-out;
 }
 
-@media (max-width: 767px) {
-    .download-card {
-        min-height: 250px;
-        padding: 1.5rem;
-    }
-}
-
-.download-card:hover {
+.offering-card:hover {
     transform: translateY(-5px);
     border-color: #4b5563;
 }
 
-.download-title {
+.offering-title {
     font-size: 1.5rem;
     font-weight: 700;
     margin: 0;
     line-height: 1.2;
-    min-height: 36px; /* Ensure consistent title height */
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
-@media (max-width: 767px) {
-    .download-title {
-        font-size: 1.25rem;
-        min-height: 30px;
-    }
-}
-
-.download-description {
+.offering-description {
     margin: 0;
     color: #94a3b8;
-    line-height: 1.5;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 0 0.5rem; /* Add some padding for text breathing room */
+    line-height: 1.6;
+}
+
+.offering-card .button {
+    align-self: start;
+    width: fit-content;
 }
 
 @media (max-width: 767px) {
-    .download-description {
+    .offering-card {
+        padding: 2rem;
+    }
+    
+    .offering-title {
+        font-size: 1.25rem;
+    }
+    
+    .offering-description {
         font-size: 0.9375rem;
     }
-}
-
-/* Ensure all buttons are exactly the same */
-.download-card .button {
-    margin: 0;
-    width: 100%;
-    height: 48px; /* Fixed height */
-    padding: 0 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.875rem !important; /* Override all button font sizes */
-    font-weight: 600;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    box-sizing: border-box;
-}
-
-/* Remove any size differences between button types in download section */
-.downloads-grid .button-primary,
-.downloads-grid .button-light,
-.downloads-grid .button-outline {
-    height: 48px !important;
-    padding: 0 1.5rem !important;
-    font-size: 0.875rem !important;
-}
-
-@media (max-width: 767px) {
-    .download-card .button,
-    .downloads-grid .button-primary,
-    .downloads-grid .button-light,
-    .downloads-grid .button-outline {
-        height: 44px !important;
-        padding: 0 1rem !important;
-        font-size: 0.8125rem !important;
-    }
-}
-
-/* Ensure button text doesn't affect button size */
-.downloads-grid .full-width {
-    width: 100%;
 }
 
 /* --- Contact & Footer --- */
