@@ -11,6 +11,9 @@
 </head>
 <body>
 
+    <!-- Particle Canvas -->
+    <canvas id="particle-canvas" class="particle-canvas"></canvas>
+
     <!-- Header -->
     <header class="main-header">
         <div class="container header-container">
@@ -269,14 +272,14 @@
     </footer>
 
     <script>
-        // Simple script for mobile menu toggle
+        // --- Mobile Menu Toggle ---
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Simple script for scroll-in animations
+        // --- Scroll-in Animations ---
         const animatedElements = document.querySelectorAll('.fade-in-up');
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -287,10 +290,79 @@
         }, {
             threshold: 0.1
         });
-
         animatedElements.forEach(element => {
             observer.observe(element);
         });
+
+        // --- Particle Cursor Effect ---
+        const canvas = document.getElementById('particle-canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        let particles = [];
+        const mouse = { x: null, y: null };
+        const colors = ['#a78bfa', '#60a5fa', '#f472b6'];
+
+        window.addEventListener('mousemove', (event) => {
+            mouse.x = event.x;
+            mouse.y = event.y;
+            // Generate fewer particles for a more subtle effect
+            particles.push(new Particle());
+        });
+        
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+
+        class Particle {
+            constructor() {
+                this.x = mouse.x;
+                this.y = mouse.y;
+                // Make particles smaller
+                this.size = Math.random() * 1 + 0.5;
+                // Make particle movement less explosive
+                this.speedX = Math.random() * 1 - 0.5;
+                this.speedY = Math.random() * 1 - 0.5;
+                this.color = colors[Math.floor(Math.random() * colors.length)];
+                this.life = 0;
+                this.maxLife = Math.random() * 50 + 30;
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                this.life++;
+            }
+            draw() {
+                ctx.globalAlpha = 1 - (this.life / this.maxLife);
+                ctx.fillStyle = this.color;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.globalAlpha = 1;
+            }
+        }
+
+        function handleParticles() {
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update();
+                particles[i].draw();
+                if (particles[i].life >= particles[i].maxLife) {
+                    particles.splice(i, 1);
+                    i--;
+                }
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            handleParticles();
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+
     </script>
 
 </body>
