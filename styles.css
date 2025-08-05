@@ -494,6 +494,7 @@ main, .main-footer {
     text-align: center;
     display: flex;
     flex-direction: column;
+    height: 100%; /* Ensure equal height */
     transition: transform 0.3s ease-out, border-color 0.3s ease-out;
 }
 .download-card:hover {
@@ -503,14 +504,16 @@ main, .main-footer {
 .download-title {
     font-size: 1.5rem;
     font-weight: 700;
+    margin-bottom: 0.5rem; /* Consistent spacing */
 }
 .download-description {
     margin-top: 0.5rem;
     color: #94a3b8;
     flex-grow: 1; /* This makes the description expand */
+    margin-bottom: 1.5rem; /* Space before button */
 }
 .download-card .button {
-    margin-top: 1.5rem;
+    margin-top: auto; /* Push button to bottom */
 }
 
 /* --- Contact & Footer --- */
