@@ -1,11 +1,18 @@
 /* styles.css */
 
 /* --- Base & Typography --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Inter', sans-serif;
     background-color: #0a0a0a;
     color: #e2e8f0;
     overflow-x: hidden;
+    margin: 0;
 }
 
 main, .main-footer {
