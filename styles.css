@@ -483,6 +483,7 @@ main, .main-footer {
     margin-top: 4rem;
     display: grid;
     gap: 2rem;
+    grid-auto-rows: 1fr; /* Force all rows to have equal height */
 }
 @media (min-width: 768px) { .downloads-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 1024px) { .downloads-grid { grid-template-columns: repeat(4, 1fr); } }
@@ -494,7 +495,7 @@ main, .main-footer {
     text-align: center;
     display: flex;
     flex-direction: column;
-    height: 100%; /* Ensure equal height */
+    min-height: 0; /* Allow flex items to shrink */
     transition: transform 0.3s ease-out, border-color 0.3s ease-out;
 }
 .download-card:hover {
@@ -504,16 +505,18 @@ main, .main-footer {
 .download-title {
     font-size: 1.5rem;
     font-weight: 700;
-    margin-bottom: 0.5rem; /* Consistent spacing */
+    margin: 0 0 0.5rem 0; /* Reset margins for consistency */
 }
 .download-description {
-    margin-top: 0.5rem;
+    margin: 0.5rem 0 0 0; /* Reset top margin */
     color: #94a3b8;
-    flex-grow: 1; /* This makes the description expand */
-    margin-bottom: 1.5rem; /* Space before button */
+    flex: 1 1 auto; /* Better flex properties */
+    display: flex;
+    align-items: center; /* Center description vertically in its space */
 }
 .download-card .button {
-    margin-top: auto; /* Push button to bottom */
+    margin-top: 1.5rem; /* Fixed margin from description */
+    align-self: stretch; /* Ensure button stretches full width */
 }
 
 /* --- Contact & Footer --- */
