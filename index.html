@@ -335,8 +335,8 @@
                 this.life++;
             }
             draw() {
-                // Reduce max opacity by 20% (multiply by 0.8)
-                ctx.globalAlpha = (1 - (this.life / this.maxLife)) * 0.8;
+                // Reduce max opacity by 20%, then another 40% (0.8 * 0.6 = 0.48)
+                ctx.globalAlpha = (1 - (this.life / this.maxLife)) * 0.48;
                 ctx.fillStyle = this.color;
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
