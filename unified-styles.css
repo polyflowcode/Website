@@ -101,7 +101,7 @@ main, .main-footer {
     padding-bottom: 1rem;
     max-width: 1300px;
     margin: 0 auto;
-    padding-left: 1rem; /* Reduced from 2rem to shift logo left */
+    padding-left: 0; /* Removed padding entirely to push logo to the edge */
     padding-right: 2rem;
 }
 
@@ -112,14 +112,12 @@ main, .main-footer {
     height: auto;
     flex-shrink: 0;
     padding: 0.5rem;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 0.5rem;
     transition: all 0.3s ease;
-    margin-right: 2rem; /* Add space between logo and center nav */
+    margin-left: -2rem; /* Increased negative margin for 500% shift */
+    margin-right: 2rem;
 }
 
 .logo:hover {
-    background: rgba(0, 0, 0, 0.7);
     transform: scale(1.02);
 }
 
@@ -128,8 +126,6 @@ main, .main-footer {
     width: auto;
     max-width: none;
     display: block;
-    filter: drop-shadow(0 0 30px rgba(217, 70, 239, 0.6)) 
-            drop-shadow(0 0 10px rgba(168, 85, 247, 0.8));
     transition: filter 0.3s ease;
 }
 
