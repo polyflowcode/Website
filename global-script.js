@@ -6,8 +6,9 @@ const mobileMenu = document.getElementById('mobile-menu');
 
 if (mobileMenuButton && mobileMenu) {
     mobileMenuButton.addEventListener('click', () => {
-        // The 'hidden' class should be defined in the CSS to set display: none;
-        mobileMenu.style.display = mobileMenu.style.display === 'block' ? 'none' : 'block';
+        // CORRECTED: Use classList.toggle with the .hidden utility class
+        // The .hidden class is defined in the CSS as display: none;
+        mobileMenu.classList.toggle('hidden');
     });
 }
 
@@ -45,7 +46,6 @@ if (canvas) {
     window.addEventListener('mousemove', (event) => {
         mouse.x = event.x;
         mouse.y = event.y;
-        // Generate fewer particles for a more subtle effect
         if (particles.length < 100) { // Limit total particles
              particles.push(new Particle());
         }
@@ -60,14 +60,12 @@ if (canvas) {
         constructor() {
             this.x = mouse.x;
             this.y = mouse.y;
-            // Make particles smaller
             this.size = Math.random() * 1.5 + 1;
-            // Reduce speed
             this.speedX = (Math.random() * 1 - 0.5) * 0.8;
             this.speedY = (Math.random() * 1 - 0.5) * 0.8;
             this.color = colors[Math.floor(Math.random() * colors.length)];
             this.life = 0;
-            this.maxLife = Math.random() * 60 + 40; // a bit longer life
+            this.maxLife = Math.random() * 60 + 40;
         }
         update() {
             this.x += this.speedX;
@@ -75,7 +73,7 @@ if (canvas) {
             this.life++;
         }
         draw() {
-            ctx.globalAlpha = (1 - (this.life / this.maxLife)) * 0.6; // slightly more visible
+            ctx.globalAlpha = (1 - (this.life / this.maxLife)) * 0.6;
             ctx.fillStyle = this.color;
             ctx.beginPath();
             ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
