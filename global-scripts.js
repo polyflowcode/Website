@@ -39,8 +39,9 @@ if (canvas) {
 
     let particles = [];
     const mouse = { x: null, y: null };
-    // UPDATED: Removed the brightest color (#f472b6) to prevent "white" glitter.
-    const colors = ['#a78bfa', '#60a5fa'];
+    
+    // UPDATED: Forcing all particles to be a single, darker color.
+    const colors = ['#a78bfa']; // Only violet particles
 
     window.addEventListener('mousemove', (event) => {
         mouse.x = event.x;
@@ -59,14 +60,12 @@ if (canvas) {
         constructor() {
             this.x = mouse.x;
             this.y = mouse.y;
-            // UPDATED: Set a fixed size to prevent small "glitter" particles.
-            this.size = 1.5;
+            this.size = Math.random() * 1.5 + 1; 
             this.speedX = (Math.random() * 1 - 0.5) * 0.6;
             this.speedY = (Math.random() * 1 - 0.5) * 0.6;
-            this.color = colors[Math.floor(Math.random() * colors.length)];
+            this.color = colors[0]; // Always use the first (and only) color
             this.life = 0;
-            // UPDATED: Set a fixed lifespan for a uniform, non-sparkling trail.
-            this.maxLife = 60;
+            this.maxLife = Math.random() * 60 + 40;
         }
         update() {
             this.x += this.speedX;
