@@ -39,12 +39,13 @@ if (canvas) {
 
     let particles = [];
     const mouse = { x: null, y: null };
-    const colors = ['#a78bfa', '#60a5fa', '#f472b6'];
+    // UPDATED: Removed the brightest color (#f472b6) to prevent "white" glitter.
+    const colors = ['#a78bfa', '#60a5fa'];
 
     window.addEventListener('mousemove', (event) => {
         mouse.x = event.x;
         mouse.y = event.y;
-        if (particles.length < 100) { // Limit total particles
+        if (particles.length < 100) {
              particles.push(new Particle());
         }
     });
@@ -58,13 +59,14 @@ if (canvas) {
         constructor() {
             this.x = mouse.x;
             this.y = mouse.y;
-            // UPDATED: Particles are slightly smaller
-            this.size = Math.random() * 1 + 1;
-            this.speedX = (Math.random() * 1 - 0.5) * 0.8;
-            this.speedY = (Math.random() * 1 - 0.5) * 0.8;
+            // UPDATED: Set a fixed size to prevent small "glitter" particles.
+            this.size = 1.5;
+            this.speedX = (Math.random() * 1 - 0.5) * 0.6;
+            this.speedY = (Math.random() * 1 - 0.5) * 0.6;
             this.color = colors[Math.floor(Math.random() * colors.length)];
             this.life = 0;
-            this.maxLife = Math.random() * 60 + 40;
+            // UPDATED: Set a fixed lifespan for a uniform, non-sparkling trail.
+            this.maxLife = 60;
         }
         update() {
             this.x += this.speedX;
@@ -72,7 +74,6 @@ if (canvas) {
             this.life++;
         }
         draw() {
-            // UPDATED: Reduced the opacity multiplier from 0.6 to 0.4 for a dimmer trail
             ctx.globalAlpha = (1 - (this.life / this.maxLife)) * 0.4;
             ctx.fillStyle = this.color;
             ctx.beginPath();
