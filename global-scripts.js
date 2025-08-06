@@ -40,8 +40,8 @@ if (canvas) {
     let particles = [];
     const mouse = { x: null, y: null };
     
-    // Minimalist color palette - subtle grays
-    const colors = ['#9ca3af', '#6b7280', '#4b5563'];
+    // Purple color palette to match site theme
+    const colors = ['#a78bfa', '#8b5cf6', '#7c3aed'];
 
     window.addEventListener('mousemove', (event) => {
         mouse.x = event.x;
@@ -84,7 +84,7 @@ if (canvas) {
         
         draw() {
             const opacity = Math.max(0, 1 - (this.life / this.maxLife));
-            ctx.globalAlpha = opacity * 0.15; // Very subtle opacity
+            ctx.globalAlpha = opacity * 0.25; // Slightly more visible for purple
             ctx.strokeStyle = this.color;
             ctx.lineWidth = 1;
             
@@ -109,7 +109,7 @@ if (canvas) {
             ctx.stroke();
             
             // Optional: add a subtle fill
-            ctx.globalAlpha = opacity * 0.05;
+            ctx.globalAlpha = opacity * 0.08;
             ctx.fillStyle = this.color;
             ctx.fill();
             
