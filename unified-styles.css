@@ -86,11 +86,14 @@ main, .main-footer {
     display: flex;
     align-items: center;
     text-decoration: none;
+    height: auto; /* Changed from fixed height */
 }
 
 .logo-image {
-    height: 64px;
+    height: 100px;
     width: auto;
+    max-width: none; /* Ensure no width constraints */
+    display: block; /* Ensure proper rendering */
 }
 
 .main-nav {
