@@ -11,20 +11,23 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    background-color: #0a0a0a;
-    color: #e2e8f0;
+    background-color: #050505;
+    color: #f1f5f9;
     overflow-x: hidden;
     margin: 0;
+    background-image: 
+        radial-gradient(ellipse at top left, rgba(139, 92, 246, 0.15) 0%, transparent 40%),
+        radial-gradient(ellipse at bottom right, rgba(217, 70, 239, 0.1) 0%, transparent 40%);
 }
 
 main, .main-footer {
     position: relative;
-    z-index: 1; /* Ensures content is above the particle canvas */
+    z-index: 1;
 }
 
 .container {
     width: 100%;
-    max-width: 1100px; /* Reduced from 1280px for wider margins */
+    max-width: 1100px;
     margin-left: auto;
     margin-right: auto;
     padding-left: 1.5rem;
@@ -32,11 +35,12 @@ main, .main-footer {
 }
 
 .gradient-text {
-    background: linear-gradient(90deg, #a78bfa, #f472b6, #60a5fa);
+    background: linear-gradient(135deg, #d946ef, #a855f7, #e879f9);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     text-fill-color: transparent;
+    filter: drop-shadow(0 0 20px rgba(168, 85, 247, 0.5));
 }
 
 .link-highlight {
@@ -64,9 +68,10 @@ main, .main-footer {
     left: 0;
     right: 0;
     z-index: 50;
-    background-color: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid #374151;
+    background: linear-gradient(180deg, rgba(5, 5, 5, 0.9) 0%, rgba(5, 5, 5, 0.7) 100%);
+    backdrop-filter: blur(20px) saturate(150%);
+    border-bottom: 1px solid rgba(168, 85, 247, 0.2);
+    box-shadow: 0 4px 30px rgba(168, 85, 247, 0.1);
 }
 
 .header-container {
@@ -78,14 +83,14 @@ main, .main-footer {
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    letter-spacing: -0.05em;
+    display: flex;
+    align-items: center;
     text-decoration: none;
 }
 
-.logo-white {
-    color: #ffffff;
+.logo-image {
+    height: 128px;
+    width: auto;
 }
 
 .main-nav {
@@ -166,28 +171,36 @@ main, .main-footer {
     transform: scale(0.98);
 }
 .button-primary {
-    background-color: #6366f1;
+    background: linear-gradient(135deg, #a855f7 0%, #d946ef 100%);
     color: #ffffff;
+    box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4);
+    border: none;
 }
 .button-primary:hover {
-    background-color: #4f46e5;
+    background: linear-gradient(135deg, #9333ea 0%, #c026d3 100%);
+    box-shadow: 0 6px 20px rgba(168, 85, 247, 0.6);
 }
 .button-light {
-    background-color: #ffffff;
-    color: #000000;
+    background: rgba(255, 255, 255, 0.95);
+    color: #18181b;
     font-size: 1.125rem;
     padding: 0.75rem 2rem;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
 }
 .button-light:hover {
-    background-color: #e5e7eb;
+    background: #ffffff;
+    box-shadow: 0 6px 25px rgba(255, 255, 255, 0.3);
 }
 .button-outline {
-    border: 1px solid #4b5563;
+    border: 1px solid rgba(168, 85, 247, 0.5);
     color: #ffffff;
+    background: rgba(168, 85, 247, 0.1);
 }
 .button-outline:hover {
-    background-color: #1f2937;
-    border-color: #6b7280;
+    background: rgba(168, 85, 247, 0.2);
+    border-color: rgba(168, 85, 247, 0.8);
+    box-shadow: 0 4px 15px rgba(168, 85, 247, 0.3);
 }
 .header-button {
     display: none;
@@ -245,7 +258,7 @@ main, .main-footer {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 0; /* Sits above body background */
+    z-index: 0;
     pointer-events: none;
 }
 
@@ -270,7 +283,6 @@ main, .main-footer {
    4. Page-Specific: index.html
    --- */
 
-/* General Section Styles for index.html */
 .section-padding {
     padding-top: 3rem;
     padding-bottom: 3rem;
@@ -316,8 +328,22 @@ main, .main-footer {
     text-align: center;
     padding-top: 5rem;
     padding-bottom: 2rem;
-    background-image: radial-gradient(circle at 20% 20%, rgba(167, 139, 250, 0.1) 0%, transparent 30%),
-                      radial-gradient(circle at 80% 70%, rgba(96, 165, 250, 0.1) 0%, transparent 30%);
+    background-image: 
+        radial-gradient(ellipse at 30% 20%, rgba(217, 70, 239, 0.3) 0%, transparent 40%),
+        radial-gradient(ellipse at 70% 60%, rgba(168, 85, 247, 0.2) 0%, transparent 40%),
+        radial-gradient(ellipse at 50% 50%, rgba(233, 121, 249, 0.1) 0%, transparent 70%);
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, transparent 0%, rgba(168, 85, 247, 0.05) 100%);
+    pointer-events: none;
 }
 
 .hero-title {
@@ -358,18 +384,23 @@ main, .main-footer {
 .floating-icon-large {
     width: 200px;
     height: 200px;
-    background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(139, 92, 246, 0.05));
+    background: linear-gradient(135deg, rgba(217, 70, 239, 0.2), rgba(168, 85, 247, 0.1));
     border-radius: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
     animation: float 6s ease-in-out infinite;
+    box-shadow: 
+        0 10px 40px rgba(168, 85, 247, 0.3),
+        inset 0 0 40px rgba(217, 70, 239, 0.2);
+    backdrop-filter: blur(10px);
 }
 
 .floating-icon-large svg {
     width: 100px;
     height: 100px;
-    stroke: #a78bfa;
+    stroke: #d946ef;
+    filter: drop-shadow(0 0 10px rgba(217, 70, 239, 0.6));
 }
 
 /* Showcase Section (Platform & About) */
@@ -416,26 +447,55 @@ main, .main-footer {
 .icon-float {
     width: 150px;
     height: 150px;
-    background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(139, 92, 246, 0.05));
+    background: linear-gradient(135deg, rgba(217, 70, 239, 0.2), rgba(168, 85, 247, 0.1));
     border-radius: 1.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
     animation: float 6s ease-in-out infinite;
+    box-shadow: 
+        0 8px 32px rgba(168, 85, 247, 0.3),
+        inset 0 0 30px rgba(217, 70, 239, 0.2);
+    backdrop-filter: blur(10px);
 }
-.icon-float.pink { background: linear-gradient(135deg, rgba(236, 72, 153, 0.1), rgba(236, 72, 153, 0.05)); }
-.icon-float.blue { background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(59, 130, 246, 0.05)); }
-.icon-float.purple { background: linear-gradient(135deg, rgba(167, 139, 250, 0.1), rgba(167, 139, 250, 0.05)); }
+.icon-float.pink { 
+    background: linear-gradient(135deg, rgba(236, 72, 153, 0.2), rgba(244, 114, 182, 0.1));
+    box-shadow: 
+        0 8px 32px rgba(236, 72, 153, 0.3),
+        inset 0 0 30px rgba(244, 114, 182, 0.2);
+}
+.icon-float.blue { 
+    background: linear-gradient(135deg, rgba(147, 51, 234, 0.2), rgba(168, 85, 247, 0.1));
+    box-shadow: 
+        0 8px 32px rgba(147, 51, 234, 0.3),
+        inset 0 0 30px rgba(168, 85, 247, 0.2);
+}
+.icon-float.purple { 
+    background: linear-gradient(135deg, rgba(217, 70, 239, 0.25), rgba(168, 85, 247, 0.15));
+    box-shadow: 
+        0 8px 32px rgba(217, 70, 239, 0.3),
+        inset 0 0 30px rgba(168, 85, 247, 0.2);
+}
 
 
 .icon-float svg {
     width: 70px;
     height: 70px;
-    stroke: #a78bfa;
+    stroke: #d946ef;
+    filter: drop-shadow(0 0 8px rgba(217, 70, 239, 0.6));
 }
-.icon-float.pink svg { stroke: #f472b6; }
-.icon-float.blue svg { stroke: #60a5fa; }
-.icon-float.purple svg { stroke: #c4b5fd; }
+.icon-float.pink svg { 
+    stroke: #f472b6; 
+    filter: drop-shadow(0 0 8px rgba(244, 114, 182, 0.6));
+}
+.icon-float.blue svg { 
+    stroke: #a855f7; 
+    filter: drop-shadow(0 0 8px rgba(168, 85, 247, 0.6));
+}
+.icon-float.purple svg { 
+    stroke: #e879f9; 
+    filter: drop-shadow(0 0 8px rgba(232, 121, 249, 0.6));
+}
 
 .showcase-title {
     font-size: 1.75rem;
@@ -466,22 +526,23 @@ main, .main-footer {
 .tag {
     display: inline-block;
     padding: 0.375rem 0.75rem;
-    background: rgba(139, 92, 246, 0.1);
-    border: 1px solid rgba(139, 92, 246, 0.2);
+    background: rgba(217, 70, 239, 0.15);
+    border: 1px solid rgba(217, 70, 239, 0.3);
     border-radius: 1rem;
     font-size: 0.8125rem;
-    color: #c4b5fd;
+    color: #e879f9;
     font-weight: 500;
+    backdrop-filter: blur(10px);
 }
 .tag.pink {
-    background: rgba(236, 72, 153, 0.1);
-    border-color: rgba(236, 72, 153, 0.2);
+    background: rgba(236, 72, 153, 0.15);
+    border-color: rgba(236, 72, 153, 0.3);
     color: #f9a8d4;
 }
 .tag.blue {
-    background: rgba(59, 130, 246, 0.1);
-    border-color: rgba(59, 130, 246, 0.2);
-    color: #93c5fd;
+    background: rgba(147, 51, 234, 0.15);
+    border-color: rgba(147, 51, 234, 0.3);
+    color: #c4b5fd;
 }
 
 /* About Section */
@@ -594,15 +655,17 @@ main, .main-footer {
 
 
 .solution-card {
-    background-color: #0a0a0a;
-    border: 1px solid #1f2937;
+    background: linear-gradient(135deg, rgba(10, 10, 10, 0.9) 0%, rgba(5, 5, 5, 0.9) 100%);
+    border: 1px solid rgba(168, 85, 247, 0.2);
     border-radius: 1rem;
     overflow: hidden;
-    transition: transform 0.3s ease-out, border-color 0.3s ease-out;
+    transition: all 0.3s ease-out;
+    backdrop-filter: blur(10px);
 }
 .solution-card:hover {
     transform: translateY(-5px);
-    border-color: #4b5563;
+    border-color: rgba(217, 70, 239, 0.5);
+    box-shadow: 0 10px 40px rgba(168, 85, 247, 0.2);
 }
 
 .solution-header {
@@ -770,32 +833,4 @@ main, .main-footer {
 .solution-cta:hover {
     color: #c4b5fd;
     transform: translateX(5px);
-}
-
-/* Update the existing .logo styles */
-.logo {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    height: 40px; /* Adjust based on your header height */
-}
-
-.logo-image {
-    height: 100%;
-    width: auto;
-    max-height: 40px; /* Adjust as needed */
-    object-fit: contain;
-}
-
-/* Add hover effect for logo */
-.logo:hover .logo-image {
-    filter: brightness(1.1);
-    transition: filter 0.2s ease;
-}
-
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-    .logo-image {
-        max-height: 128px;
-    }
 }

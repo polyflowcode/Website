@@ -41,7 +41,7 @@ if (canvas) {
     const mouse = { x: null, y: null };
     
     // Purple color palette to match site theme
-    const colors = ['#a78bfa', '#8b5cf6', '#7c3aed'];
+    const colors = ['#d946ef', '#a855f7', '#e879f9'];
 
     window.addEventListener('mousemove', (event) => {
         mouse.x = event.x;
@@ -84,9 +84,9 @@ if (canvas) {
         
         draw() {
             const opacity = Math.max(0, 1 - (this.life / this.maxLife));
-            ctx.globalAlpha = opacity * 0.25; // Slightly more visible for purple
+            ctx.globalAlpha = opacity * 0.3; // Slightly more visible for vibrant purple
             ctx.strokeStyle = this.color;
-            ctx.lineWidth = 1;
+            ctx.lineWidth = 1.5;
             
             ctx.save();
             ctx.translate(this.x, this.y);
@@ -108,8 +108,14 @@ if (canvas) {
             ctx.closePath();
             ctx.stroke();
             
+            // Add glow effect
+            ctx.shadowBlur = 10;
+            ctx.shadowColor = this.color;
+            ctx.stroke();
+            ctx.shadowBlur = 0;
+            
             // Optional: add a subtle fill
-            ctx.globalAlpha = opacity * 0.08;
+            ctx.globalAlpha = opacity * 0.1;
             ctx.fillStyle = this.color;
             ctx.fill();
             
