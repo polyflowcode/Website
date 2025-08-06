@@ -6,8 +6,6 @@ const mobileMenu = document.getElementById('mobile-menu');
 
 if (mobileMenuButton && mobileMenu) {
     mobileMenuButton.addEventListener('click', () => {
-        // CORRECTED: Use classList.toggle with the .hidden utility class
-        // The .hidden class is defined in the CSS as display: none;
         mobileMenu.classList.toggle('hidden');
     });
 }
@@ -60,7 +58,8 @@ if (canvas) {
         constructor() {
             this.x = mouse.x;
             this.y = mouse.y;
-            this.size = Math.random() * 1.5 + 1;
+            // UPDATED: Particles are slightly smaller
+            this.size = Math.random() * 1 + 1;
             this.speedX = (Math.random() * 1 - 0.5) * 0.8;
             this.speedY = (Math.random() * 1 - 0.5) * 0.8;
             this.color = colors[Math.floor(Math.random() * colors.length)];
@@ -73,7 +72,8 @@ if (canvas) {
             this.life++;
         }
         draw() {
-            ctx.globalAlpha = (1 - (this.life / this.maxLife)) * 0.6;
+            // UPDATED: Reduced the opacity multiplier from 0.6 to 0.4 for a dimmer trail
+            ctx.globalAlpha = (1 - (this.life / this.maxLife)) * 0.4;
             ctx.fillStyle = this.color;
             ctx.beginPath();
             ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
