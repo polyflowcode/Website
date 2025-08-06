@@ -70,7 +70,7 @@ main, .main-footer {
     left: 0;
     right: 0;
     z-index: 50;
-    background: rgba(5, 5, 5, 0.4);
+    background: rgba(10, 10, 10, 0.85); /* Darker background for contrast */
     backdrop-filter: blur(20px) saturate(150%);
     border-bottom: 1px solid rgba(168, 85, 247, 0.3);
     box-shadow: 
@@ -86,9 +86,9 @@ main, .main-footer {
     right: 0;
     bottom: 0;
     background: linear-gradient(90deg, 
-        rgba(168, 85, 247, 0.05) 0%, 
-        rgba(217, 70, 239, 0.08) 50%, 
-        rgba(168, 85, 247, 0.05) 100%);
+        rgba(168, 85, 247, 0.08) 0%, 
+        rgba(217, 70, 239, 0.12) 50%, 
+        rgba(168, 85, 247, 0.08) 100%);
     pointer-events: none;
     z-index: -1;
 }
@@ -111,6 +111,15 @@ main, .main-footer {
     text-decoration: none;
     height: auto;
     flex-shrink: 0;
+    padding: 0.5rem;
+    background: rgba(0, 0, 0, 0.5); /* Dark background behind logo */
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.logo:hover {
+    background: rgba(0, 0, 0, 0.7);
+    transform: scale(1.02);
 }
 
 .logo-image {
@@ -118,12 +127,14 @@ main, .main-footer {
     width: auto;
     max-width: none;
     display: block;
-    filter: drop-shadow(0 0 20px rgba(217, 70, 239, 0.4));
+    filter: drop-shadow(0 0 30px rgba(217, 70, 239, 0.6)) 
+            drop-shadow(0 0 10px rgba(168, 85, 247, 0.8));
     transition: filter 0.3s ease;
 }
 
 .logo:hover .logo-image {
-    filter: drop-shadow(0 0 30px rgba(217, 70, 239, 0.6));
+    filter: drop-shadow(0 0 40px rgba(217, 70, 239, 0.8)) 
+            drop-shadow(0 0 15px rgba(168, 85, 247, 1));
 }
 
 .main-nav {
@@ -176,7 +187,7 @@ main, .main-footer {
         left: 50%;
         transform: translateX(-50%);
         min-width: 180px;
-        background: rgba(5, 5, 5, 0.8);
+        background: rgba(10, 10, 10, 0.95); /* Darker for contrast */
         backdrop-filter: blur(20px) saturate(150%);
         border: 1px solid rgba(168, 85, 247, 0.3);
         border-radius: 0.75rem;
