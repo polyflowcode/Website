@@ -142,4 +142,7 @@ if (canvas) {
     }
 
     animate();
+    
+    // Debug log to confirm particle effect is running
+    console.log('Particle effect initialized on:', window.location.pathname);
 }
