@@ -18,6 +18,8 @@ body {
     background-image: 
         radial-gradient(ellipse at top left, rgba(139, 92, 246, 0.15) 0%, transparent 40%),
         radial-gradient(ellipse at bottom right, rgba(217, 70, 239, 0.1) 0%, transparent 40%);
+    position: relative;
+    min-height: 100vh;
 }
 
 main, .main-footer {
@@ -351,6 +353,7 @@ main, .main-footer {
     height: 100%;
     z-index: 0;
     pointer-events: none;
+    opacity: 1; /* Ensure it's visible */
 }
 
 .fade-in-up {
@@ -709,12 +712,13 @@ main, .main-footer {
 
 /* Page Hero */
 .page-hero {
-    background: linear-gradient(180deg, #050505 0%, rgba(5, 5, 5, 0.95) 100%);
+    background: transparent; /* Make transparent to show particles */
     padding: 8rem 0 4rem 0;
     border-bottom: 1px solid rgba(168, 85, 247, 0.2);
     text-align: center;
     position: relative;
     overflow: hidden;
+    z-index: 1;
 }
 
 .page-hero::before {
@@ -726,6 +730,7 @@ main, .main-footer {
     height: 200%;
     background: radial-gradient(ellipse at center, rgba(217, 70, 239, 0.15) 0%, transparent 40%);
     animation: float 20s ease-in-out infinite;
+    z-index: -1;
 }
 
 .page-title {
@@ -749,9 +754,10 @@ main, .main-footer {
 
 /* Solutions Info Section */
 .solutions-info-section {
-    background: linear-gradient(180deg, rgba(5, 5, 5, 0.95) 0%, #050505 100%);
+    background: transparent; /* Make transparent to show particles */
     padding: 4rem 0;
     position: relative;
+    z-index: 1;
 }
 
 .solutions-info-section::before {
@@ -762,9 +768,11 @@ main, .main-footer {
     right: 0;
     bottom: 0;
     background: 
+        linear-gradient(180deg, rgba(5, 5, 5, 0.8) 0%, rgba(5, 5, 5, 0.9) 100%),
         radial-gradient(ellipse at 20% 30%, rgba(168, 85, 247, 0.1) 0%, transparent 40%),
         radial-gradient(ellipse at 80% 70%, rgba(217, 70, 239, 0.08) 0%, transparent 40%);
     pointer-events: none;
+    z-index: -1;
 }
 
 .solutions-info-grid {
@@ -779,12 +787,14 @@ main, .main-footer {
 
 
 .solution-card {
-    background: linear-gradient(135deg, rgba(10, 10, 10, 0.9) 0%, rgba(5, 5, 5, 0.9) 100%);
+    background: rgba(10, 10, 10, 0.7); /* More transparent */
     border: 1px solid rgba(168, 85, 247, 0.2);
     border-radius: 1rem;
     overflow: hidden;
     transition: all 0.3s ease-out;
     backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 2;
 }
 .solution-card:hover {
     transform: translateY(-5px);
