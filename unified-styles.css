@@ -771,3 +771,31 @@ main, .main-footer {
     color: #c4b5fd;
     transform: translateX(5px);
 }
+
+/* Update the existing .logo styles */
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    height: 40px; /* Adjust based on your header height */
+}
+
+.logo-image {
+    height: 100%;
+    width: auto;
+    max-height: 40px; /* Adjust as needed */
+    object-fit: contain;
+}
+
+/* Add hover effect for logo */
+.logo:hover .logo-image {
+    filter: brightness(1.1);
+    transition: filter 0.2s ease;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .logo-image {
+        max-height: 36px;
+    }
+}
