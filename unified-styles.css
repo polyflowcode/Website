@@ -19,12 +19,12 @@ body {
 
 main, .main-footer {
     position: relative;
-    z-index: 1; /* Ensures content is above the particle canvas */
+    z-index: 1;
 }
 
 .container {
     width: 100%;
-    max-width: 1100px; /* Reduced from 1280px for wider margins */
+    max-width: 1100px;
     margin-left: auto;
     margin-right: auto;
     padding-left: 1.5rem;
@@ -78,14 +78,14 @@ main, .main-footer {
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    letter-spacing: -0.05em;
+    display: flex;
+    align-items: center;
     text-decoration: none;
 }
 
-.logo-white {
-    color: #ffffff;
+.logo img {
+    height: 36px;
+    width: auto;
 }
 
 .main-nav {
@@ -245,7 +245,7 @@ main, .main-footer {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 0; /* Sits above body background */
+    z-index: 0;
     pointer-events: none;
 }
 
@@ -270,7 +270,6 @@ main, .main-footer {
    4. Page-Specific: index.html
    --- */
 
-/* General Section Styles for index.html */
 .section-padding {
     padding-top: 3rem;
     padding-bottom: 3rem;
