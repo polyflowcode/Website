@@ -760,20 +760,7 @@ main, .main-footer {
     z-index: 1;
 }
 
-.solutions-info-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-        linear-gradient(180deg, rgba(5, 5, 5, 0.8) 0%, rgba(5, 5, 5, 0.9) 100%),
-        radial-gradient(ellipse at 20% 30%, rgba(168, 85, 247, 0.1) 0%, transparent 40%),
-        radial-gradient(ellipse at 80% 70%, rgba(217, 70, 239, 0.08) 0%, transparent 40%);
-    pointer-events: none;
-    z-index: -1;
-}
+/* Remove the opaque background overlay */
 
 .solutions-info-grid {
     display: grid;
@@ -787,12 +774,12 @@ main, .main-footer {
 
 
 .solution-card {
-    background: rgba(10, 10, 10, 0.7); /* More transparent */
+    background: rgba(10, 10, 10, 0.4); /* Much more transparent */
     border: 1px solid rgba(168, 85, 247, 0.2);
     border-radius: 1rem;
     overflow: hidden;
     transition: all 0.3s ease-out;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(20px); /* Increased blur for better readability */
     position: relative;
     z-index: 2;
 }
@@ -803,7 +790,7 @@ main, .main-footer {
 }
 
 .solution-header {
-    background: linear-gradient(135deg, rgba(168, 85, 247, 0.1) 0%, rgba(217, 70, 239, 0.05) 100%);
+    background: rgba(168, 85, 247, 0.05); /* Much more transparent */
     padding: 2rem;
     display: flex;
     align-items: center;
@@ -811,6 +798,7 @@ main, .main-footer {
     border-bottom: 1px solid rgba(168, 85, 247, 0.2);
     position: relative;
     overflow: hidden;
+    backdrop-filter: blur(10px);
 }
 
 .solution-header::after {
@@ -889,6 +877,8 @@ main, .main-footer {
 
 .solution-content {
     padding: 2rem;
+    background: rgba(0, 0, 0, 0.2); /* Semi-transparent background */
+    backdrop-filter: blur(5px);
 }
 
 .solution-overview {
@@ -943,11 +933,11 @@ main, .main-footer {
 }
 
 .spec-item {
-    background: linear-gradient(135deg, rgba(168, 85, 247, 0.05) 0%, rgba(217, 70, 239, 0.03) 100%);
+    background: rgba(168, 85, 247, 0.03); /* More transparent */
     padding: 1rem;
     border-radius: 0.5rem;
-    border: 1px solid rgba(168, 85, 247, 0.2);
-    backdrop-filter: blur(10px);
+    border: 1px solid rgba(168, 85, 247, 0.15);
+    backdrop-filter: blur(15px);
     transition: all 0.2s ease;
 }
 
@@ -982,12 +972,12 @@ main, .main-footer {
 }
 
 .pricing-tier {
-    background: linear-gradient(135deg, rgba(168, 85, 247, 0.05) 0%, rgba(217, 70, 239, 0.03) 100%);
+    background: rgba(168, 85, 247, 0.03); /* More transparent */
     padding: 1.5rem;
     border-radius: 0.5rem;
-    border: 1px solid rgba(168, 85, 247, 0.2);
+    border: 1px solid rgba(168, 85, 247, 0.15);
     text-align: center;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(15px);
     transition: all 0.2s ease;
 }
 
