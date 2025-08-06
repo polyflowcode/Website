@@ -101,7 +101,7 @@ main, .main-footer {
     padding-bottom: 1rem;
     max-width: 1300px;
     margin: 0 auto;
-    padding-left: 2rem;
+    padding-left: 1rem; /* Reduced from 2rem to shift logo left */
     padding-right: 2rem;
 }
 
@@ -112,9 +112,10 @@ main, .main-footer {
     height: auto;
     flex-shrink: 0;
     padding: 0.5rem;
-    background: rgba(0, 0, 0, 0.5); /* Dark background behind logo */
+    background: rgba(0, 0, 0, 0.5);
     border-radius: 0.5rem;
     transition: all 0.3s ease;
+    margin-right: 2rem; /* Add space between logo and center nav */
 }
 
 .logo:hover {
