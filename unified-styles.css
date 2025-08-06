@@ -97,11 +97,11 @@ main, .main-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-top: 0.6rem; /* Reduced from 1rem (40% reduction) */
+    padding-bottom: 0.6rem; /* Reduced from 1rem (40% reduction) */
     max-width: 1300px;
     margin: 0 auto;
-    padding-left: 0; /* Removed padding entirely to push logo to the edge */
+    padding-left: 2rem;
     padding-right: 2rem;
 }
 
@@ -111,10 +111,12 @@ main, .main-footer {
     text-decoration: none;
     height: auto;
     flex-shrink: 0;
-    padding: 0.5rem;
+    padding: 0;
     transition: all 0.3s ease;
-    margin-left: -2rem; /* Increased negative margin for 500% shift */
-    margin-right: 2rem;
+    margin-left: -5rem;
+    margin-right: auto;
+    position: relative;
+    z-index: 51; /* Above header to ensure visibility */
 }
 
 .logo:hover {
@@ -122,11 +124,12 @@ main, .main-footer {
 }
 
 .logo-image {
-    height: 100px;
+    height: 100px; /* Increased to 100px */
     width: auto;
     max-width: none;
     display: block;
     transition: filter 0.3s ease;
+    margin: -12px 0; /* Increased negative margin to prevent header expansion */
 }
 
 .logo:hover .logo-image {
@@ -142,9 +145,8 @@ main, .main-footer {
         display: flex;
         align-items: center;
         gap: 2rem;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
+        margin-left: auto; /* Push nav to center */
+        margin-right: auto; /* Push nav to center */
     }
     
     /* Home dropdown container */
@@ -354,6 +356,7 @@ main, .main-footer {
     .header-button {
         display: inline-flex;
         flex-shrink: 0;
+        margin-left: auto; /* Ensure button stays on right */
     }
 }
 
