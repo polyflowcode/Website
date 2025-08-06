@@ -19,10 +19,15 @@
                 <img src="logo.png" alt="Polyflow" class="logo-image">
             </a>
             <nav class="main-nav">
-                <a href="#home" class="active">Home</a>
-                <a href="#platform">Platform</a>
+                <div class="nav-dropdown">
+                    <a href="#home" class="active">Home</a>
+                    <div class="nav-dropdown-menu">
+                        <a href="#platform">Platform</a>
+                        <a href="#about">About</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                </div>
                 <a href="offerings.html">Solutions</a>
-                <a href="#about">About</a>
             </nav>
             <a href="#contact" class="button button-primary header-button">Get in Touch</a>
             <button id="mobile-menu-button" class="mobile-menu-toggle">
@@ -31,9 +36,10 @@
         </div>
         <div id="mobile-menu" class="mobile-nav">
             <a href="#home" class="active">Home</a>
-            <a href="#platform">Platform</a>
+            <a href="#platform" style="padding-left: 2rem;">→ Platform</a>
+            <a href="#about" style="padding-left: 2rem;">→ About</a>
+            <a href="#contact" style="padding-left: 2rem;">→ Contact</a>
             <a href="offerings.html">Solutions</a>
-            <a href="#about">About</a>
             <a href="#contact" class="button button-primary">Get in Touch</a>
         </div>
     </header>
