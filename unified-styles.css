@@ -225,6 +225,7 @@ main, .main-footer {
         position: absolute;
         left: 1rem;
         color: #d946ef;
+        filter: drop-shadow(0 0 3px rgba(217, 70, 239, 0.6));
     }
     
     /* Regular nav links */
