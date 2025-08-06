@@ -40,14 +40,15 @@ if (canvas) {
     let particles = [];
     const mouse = { x: null, y: null };
     
-    // UPDATED: Forcing all particles to be a single, darker color.
-    const colors = ['#a78bfa']; // Only violet particles
+    // Minimalist color palette - subtle grays
+    const colors = ['#9ca3af', '#6b7280', '#4b5563'];
 
     window.addEventListener('mousemove', (event) => {
         mouse.x = event.x;
         mouse.y = event.y;
-        if (particles.length < 100) {
-             particles.push(new Particle());
+        // Reduced particle spawn rate for minimalist feel
+        if (particles.length < 30 && Math.random() > 0.7) {
+            particles.push(new Particle());
         }
     });
     
@@ -60,24 +61,59 @@ if (canvas) {
         constructor() {
             this.x = mouse.x;
             this.y = mouse.y;
-            this.size = Math.random() * 1.5 + 1; 
-            this.speedX = (Math.random() * 1 - 0.5) * 0.6;
-            this.speedY = (Math.random() * 1 - 0.5) * 0.6;
-            this.color = colors[0]; // Always use the first (and only) color
+            this.size = Math.random() * 4 + 2; // Slightly larger base size
+            this.speedX = (Math.random() * 0.4 - 0.2); // Slower movement
+            this.speedY = (Math.random() * 0.4 - 0.2);
+            this.color = colors[Math.floor(Math.random() * colors.length)];
             this.life = 0;
-            this.maxLife = Math.random() * 60 + 40;
+            this.maxLife = Math.random() * 100 + 150; // Longer lifespan
+            this.rotation = Math.random() * Math.PI * 2;
+            this.rotationSpeed = (Math.random() - 0.5) * 0.02;
+            this.sides = Math.floor(Math.random() * 3) + 3; // 3-5 sides
+            this.angleVariation = Math.random() * 0.3 + 0.7; // For irregular polygons
         }
+        
         update() {
             this.x += this.speedX;
             this.y += this.speedY;
+            this.rotation += this.rotationSpeed;
             this.life++;
+            // Gentle drift effect
+            this.speedY += 0.002;
         }
+        
         draw() {
-            ctx.globalAlpha = (1 - (this.life / this.maxLife)) * 0.4;
-            ctx.fillStyle = this.color;
+            const opacity = Math.max(0, 1 - (this.life / this.maxLife));
+            ctx.globalAlpha = opacity * 0.15; // Very subtle opacity
+            ctx.strokeStyle = this.color;
+            ctx.lineWidth = 1;
+            
+            ctx.save();
+            ctx.translate(this.x, this.y);
+            ctx.rotate(this.rotation);
+            
             ctx.beginPath();
-            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            for (let i = 0; i < this.sides; i++) {
+                const angle = (i / this.sides) * Math.PI * 2;
+                const radius = this.size * (this.angleVariation + Math.random() * 0.3);
+                const x = Math.cos(angle) * radius;
+                const y = Math.sin(angle) * radius;
+                
+                if (i === 0) {
+                    ctx.moveTo(x, y);
+                } else {
+                    ctx.lineTo(x, y);
+                }
+            }
+            ctx.closePath();
+            ctx.stroke();
+            
+            // Optional: add a subtle fill
+            ctx.globalAlpha = opacity * 0.05;
+            ctx.fillStyle = this.color;
             ctx.fill();
+            
+            ctx.restore();
             ctx.globalAlpha = 1;
         }
     }
