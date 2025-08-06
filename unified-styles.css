@@ -796,6 +796,6 @@ main, .main-footer {
 /* Mobile responsiveness */
 @media (max-width: 768px) {
     .logo-image {
-        max-height: 64px;
+        max-height: 128px;
     }
 }
