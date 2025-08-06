@@ -16,7 +16,7 @@
     <header class="main-header">
         <div class="container header-container">
             <a href="index.html" class="logo">
-                <span class="gradient-text">Poly</span><span class="logo-white">flow</span>
+                <img src="logo.png" alt="Polyflow Logo">
             </a>
             <nav class="main-nav">
                 <a href="index.html">Home</a>
@@ -26,10 +26,10 @@
             </nav>
             <a href="index.html#contact" class="button button-primary header-button">Get in Touch</a>
             <button id="mobile-menu-button" class="mobile-menu-toggle">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
         </div>
-        <div id="mobile-menu" class="mobile-nav">
+        <div id="mobile-menu" class="mobile-nav hidden">
             <a href="index.html">Home</a>
             <a href="index.html#platform">Platform</a>
             <a href="offerings.html" class="active">Solutions</a>
@@ -49,75 +49,9 @@
         <section class="solutions-info-section">
             <div class="container">
                 <div class="solutions-info-grid">
-                    
-                    <div class="solution-card fade-in-up">
-                        <div class="solution-header">
-                            <div class="solution-icon-wrapper purple">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" /></svg>
-                            </div>
-                            <h2 class="solution-name">Cloud Storage Platform</h2>
-                        </div>
-                        <div class="solution-content">
-                            <p class="solution-overview">Store and manage your large complex mesh sequences in our cloud-based solution powered by industry-leading compression technology.</p>
-                            <div class="solution-features"><h3 class="features-title">Key Features</h3><ul class="features-list"><li>Up to 60% reduction in storage costs</li><li>Automatic compression and decompression</li><li>Version control and collaboration tools</li><li>REST API for seamless integration</li><li>Real-time streaming capabilities</li></ul></div>
-                            <div class="solution-specs"><h3 class="specs-title">Technical Specifications</h3><div class="specs-grid"><div class="spec-item"><span class="spec-label">Compression Ratio</span><span class="spec-value">Up to 10:1</span></div><div class="spec-item"><span class="spec-label">File Size Limit</span><span class="spec-value">No limit</span></div><div class="spec-item"><span class="spec-label">API Rate Limit</span><span class="spec-value">10,000 req/hour</span></div><div class="spec-item"><span class="spec-label">Availability</span><span class="spec-value">99.9% SLA</span></div></div></div>
-                            <div class="solution-pricing"><h3 class="pricing-title">Pricing</h3><div class="pricing-options"><div class="pricing-tier"><h4>Starter</h4><p class="price">$99/month</p><p class="price-details">Up to 1TB storage</p></div><div class="pricing-tier"><h4>Professional</h4><p class="price">$499/month</p><p class="price-details">Up to 10TB storage</p></div><div class="pricing-tier"><h4>Enterprise</h4><p class="price">Custom</p><p class="price-details">Unlimited storage</p></div></div></div>
-                            <a href="#" class="solution-cta">Request Demo →</a>
-                        </div>
-                    </div>
-
-                    <div class="solution-card fade-in-up">
-                        <div class="solution-header">
-                            <div class="solution-icon-wrapper pink">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                            </div>
-                            <h2 class="solution-name">Facial Motion Capture</h2>
-                        </div>
-                        <div class="solution-content">
-                            <p class="solution-overview">Revolutionary volume tracking technology for dynamic mesh displacement, dramatically reducing artist workloads compared to traditional topology-based methods.</p>
-                            <div class="solution-features"><h3 class="features-title">Key Features</h3><ul class="features-list"><li>Topology-independent capture</li><li>Real-time preview on mobile devices</li><li>Automatic retargeting to any mesh</li><li>Blender and Maya integration</li><li>Machine learning enhancement</li></ul></div>
-                            <div class="solution-specs"><h3 class="specs-title">Technical Specifications</h3><div class="specs-grid"><div class="spec-item"><span class="spec-label">Capture FPS</span><span class="spec-value">60-120 fps</span></div><div class="spec-item"><span class="spec-label">Accuracy</span><span class="spec-value">Sub-millimeter</span></div><div class="spec-item"><span class="spec-label">Platforms</span><span class="spec-value">iOS, Android</span></div><div class="spec-item"><span class="spec-label">Export Formats</span><span class="spec-value">FBX, USD, Alembic</span></div></div></div>
-                            <div class="solution-pricing"><h3 class="pricing-title">Pricing</h3><div class="pricing-options"><div class="pricing-tier"><h4>Individual</h4><p class="price">$29/month</p><p class="price-details">Single user license</p></div><div class="pricing-tier"><h4>Studio</h4><p class="price">$199/month</p><p class="price-details">Up to 10 users</p></div><div class="pricing-tier"><h4>Enterprise</h4><p class="price">Custom</p><p class="price-details">Unlimited users</p></div></div></div>
-                            <a href="#" class="solution-cta">Download Trial →</a>
-                        </div>
-                    </div>
-
-                    <div class="solution-card fade-in-up">
-                        <div class="solution-header">
-                            <div class="solution-icon-wrapper blue">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2 1M4 7l2-1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5" /></svg>
-                            </div>
-                            <h2 class="solution-name">Unity Mesh Playback SDK</h2>
-                        </div>
-                        <div class="solution-content">
-                            <p class="solution-overview">High-performance real-time playback plugin for viewing complex encoded mesh sequences, optimized for standalone XR headsets and mobile devices.</p>
-                            <div class="solution-features"><h3 class="features-title">Key Features</h3><ul class="features-list"><li>Hardware-accelerated decoding</li><li>Quest 2/3 optimization</li><li>Streaming from cloud or local</li><li>LOD system for performance</li><li>Timeline scrubbing support</li></ul></div>
-                            <div class="solution-specs"><h3 class="specs-title">Technical Specifications</h3><div class="specs-grid"><div class="spec-item"><span class="spec-label">Unity Version</span><span class="spec-value">2021.3+</span></div><div class="spec-item"><span class="spec-label">Platforms</span><span class="spec-value">All Unity platforms</span></div><div class="spec-item"><span class="spec-label">Memory Usage</span><span class="spec-value">50% less than raw</span></div><div class="spec-item"><span class="spec-label">Max Vertices</span><span class="spec-value">10M per frame</span></div></div></div>
-                            <div class="solution-pricing"><h3 class="pricing-title">Pricing</h3><div class="pricing-options"><div class="pricing-tier"><h4>Indie</h4><p class="price">$49</p><p class="price-details">One-time purchase</p></div><div class="pricing-tier"><h4>Pro</h4><p class="price">$299</p><p class="price-details">Source code included</p></div><div class="pricing-tier"><h4>Enterprise</h4><p class="price">Custom</p><p class="price-details">Custom features</p></div></div></div>
-                            <a href="#" class="solution-cta">View on Asset Store →</a>
-                        </div>
-                    </div>
-
-                    <div class="solution-card fade-in-up">
-                        <div class="solution-header">
-                            <div class="solution-icon-wrapper orange">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" /></svg>
-                            </div>
-                            <h2 class="solution-name">Hardware Decoder Chip</h2>
-                        </div>
-                        <div class="solution-content">
-                            <p class="solution-overview">Custom ASIC solution for manufacturers enabling device-native encoding and decoding of mesh sequences with minimal power consumption.</p>
-                            <div class="solution-features"><h3 class="features-title">Key Features</h3><ul class="features-list"><li>10x faster than software decoding</li><li>Ultra-low power consumption</li><li>4K@120fps mesh sequences</li><li>Hardware security features</li><li>Reference board designs available</li></ul></div>
-                            <div class="solution-specs"><h3 class="specs-title">Technical Specifications</h3><div class="specs-grid"><div class="spec-item"><span class="spec-label">Process Node</span><span class="spec-value">7nm</span></div><div class="spec-item"><span class="spec-label">Power Draw</span><span class="spec-value">< 2W</span></div><div class="spec-item"><span class="spec-label">Interface</span><span class="spec-value">PCIe 4.0</span></div><div class="spec-item"><span class="spec-label">Throughput</span><span class="spec-value">40 Gbps</span></div></div></div>
-                            <div class="solution-pricing"><h3 class="pricing-title">Licensing</h3><div class="pricing-options"><div class="pricing-tier wide"><h4>OEM Partnership</h4><p class="price">Contact Us</p><p class="price-details">Minimum order quantities apply</p></div></div></div>
-                            <a href="#" class="solution-cta">Contact Sales →</a>
-                        </div>
-                    </div>
-
                 </div>
             </div>
         </section>
-
     </main>
     
     <footer class="main-footer">
