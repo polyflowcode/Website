@@ -101,8 +101,8 @@ main, .main-footer {
     padding-bottom: 0.6rem;
     max-width: 1300px;
     margin: 0 auto;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: -5rem;
+    padding-right: -5rem;
 }
 
 .logo {
@@ -113,7 +113,7 @@ main, .main-footer {
     flex-shrink: 0;
     padding: 0;
     transition: all 0.3s ease;
-    margin-left: -5rem;
+    margin-left: -2rem;
     margin-right: auto;
     position: relative;
     z-index: 51;
@@ -124,12 +124,12 @@ main, .main-footer {
 }
 
 .logo-image {
-    height: 100px;
+    height: 120px;
     width: auto;
     max-width: none;
     display: block;
     transition: filter 0.3s ease;
-    margin: -12px 0;
+    margin: -10px 0;
 }
 
 .logo:hover .logo-image {
