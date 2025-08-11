@@ -70,7 +70,7 @@ main, .main-footer {
     left: 0;
     right: 0;
     z-index: 50;
-    background: rgba(10, 10, 10, 0.85); /* Darker background for contrast */
+    background: rgba(10, 10, 10, 0.85);
     backdrop-filter: blur(20px) saturate(150%);
     border-bottom: 1px solid rgba(168, 85, 247, 0.3);
     box-shadow:
@@ -97,8 +97,8 @@ main, .main-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 0.6rem; /* Reduced from 1rem (40% reduction) */
-    padding-bottom: 0.6rem; /* Reduced from 1rem (40% reduction) */
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
     max-width: 1300px;
     margin: 0 auto;
     padding-left: 2rem;
@@ -116,7 +116,7 @@ main, .main-footer {
     margin-left: -5rem;
     margin-right: auto;
     position: relative;
-    z-index: 51; /* Above header to ensure visibility */
+    z-index: 51;
 }
 
 .logo:hover {
@@ -124,12 +124,12 @@ main, .main-footer {
 }
 
 .logo-image {
-    height: 125px; /* Increased to 125px */
+    height: 100px;
     width: auto;
     max-width: none;
     display: block;
     transition: filter 0.3s ease;
-    margin: -12px 0; /* Increased negative margin to prevent header expansion */
+    margin: -12px 0;
 }
 
 .logo:hover .logo-image {
@@ -140,18 +140,23 @@ main, .main-footer {
 .main-nav {
     display: none;
 }
+
 @media (min-width: 768px) {
     .main-nav {
         display: flex;
         align-items: center;
         gap: 2rem;
-        margin-left: auto; /* Push nav to center */
-        margin-right: auto; /* Push nav to center */
+        margin-left: auto;
+        margin-right: auto;
     }
 
-    /* Unified nav link styling for both dropdown and regular links */
-    .nav-dropdown > a,
-    .main-nav > a {
+    /* Home dropdown container */
+    .nav-dropdown {
+        position: relative;
+    }
+
+    /* Base nav link styles */
+    .nav-dropdown > a {
         color: #d1d5db;
         transition: color 0.2s, transform 0.2s;
         text-decoration: none;
@@ -162,14 +167,22 @@ main, .main-footer {
         position: relative;
     }
 
-    /* Unified active state styling */
+    .main-nav > a {
+        color: #d1d5db;
+        transition: color 0.2s, transform 0.2s;
+        text-decoration: none;
+        display: inline-block;
+        padding: 0.5rem 0;
+        position: relative;
+    }
+
+    /* Active states */
     .nav-dropdown > a.active,
     .main-nav > a.active {
         color: #e879f9;
         filter: drop-shadow(0 0 8px rgba(232, 121, 249, 0.6));
     }
 
-    /* Unified underline for active states */
     .nav-dropdown > a.active::after,
     .main-nav > a.active::after {
         content: '';
@@ -182,9 +195,8 @@ main, .main-footer {
         animation: glow 2s ease-in-out infinite;
     }
 
-    /* Hover underlines for non-active states */
-    .nav-dropdown > a:not(.active)::after,
-    .main-nav > a:not(.active)::after {
+    /* Simple spinning underline - only on hover start */
+    .nav-dropdown > a::before {
         content: '';
         position: absolute;
         bottom: -4px;
@@ -193,12 +205,49 @@ main, .main-footer {
         height: 2px;
         background: linear-gradient(90deg, transparent, #d946ef, transparent);
         opacity: 0;
-        transition: opacity 0.3s ease-out;
+        transform: scaleX(0);
+        transition: none;
     }
 
-    .nav-dropdown:hover > a:not(.active)::after,
+    .nav-dropdown:hover > a::before {
+        animation: quickSpin 0.4s ease-in-out forwards;
+    }
+
+    /* Hide other underlines during spin */
+    .nav-dropdown:hover > a::after {
+        opacity: 0 !important;
+    }
+
+    /* Solutions link normal hover */
     .main-nav > a:not(.active):hover::after {
+        content: '';
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, #d946ef, transparent);
         opacity: 1;
+    }
+
+    @keyframes quickSpin {
+        0% { 
+            opacity: 0;
+            transform: rotateZ(0deg) scaleX(0);
+        }
+        50% { 
+            opacity: 1;
+            transform: rotateZ(180deg) scaleX(0.8);
+        }
+        100% { 
+            opacity: 1;
+            transform: rotateZ(360deg) scaleX(1);
+        }
+    }
+
+    @keyframes glow {
+        0%, 100% { opacity: 0.5; }
+        50% { opacity: 1; }
     }
 
     /* Hover color changes */
@@ -208,69 +257,40 @@ main, .main-footer {
         transform: translateY(-2px);
     }
 
-    @keyframes glow {
-        0%, 100% { opacity: 0.5; }
-        50% { opacity: 1; }
-    }
-
-    /* Dropdown menu with enhanced animations */
+    /* Dropdown menu - appears after spin */
     .nav-dropdown-menu {
         position: absolute;
-        top: 100%;
-        left: 0; /* Changed from 50% to align under Home link */
-        transform: translateX(0); /* Removed the -50% offset */
+        top: calc(100% + 0.5rem);
+        left: 50%;
+        transform: translateX(-50%);
         min-width: 180px;
         background: rgba(10, 10, 10, 0.95);
         backdrop-filter: blur(20px) saturate(150%);
         border: 1px solid rgba(168, 85, 247, 0.3);
         border-radius: 0.75rem;
         padding: 0.5rem 0;
-        margin-top: 0.5rem;
         opacity: 0;
         visibility: hidden;
-        transform: translateX(0) translateY(-15px) scale(0.95);
-        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        transform: translateX(-50%) translateY(-10px) scale(0.95);
+        transition: all 0.3s ease;
+        transition-delay: 0.2s;
         box-shadow:
             0 8px 32px rgba(168, 85, 247, 0.3),
             inset 0 1px 0 rgba(217, 70, 239, 0.1);
         transform-origin: center top;
+        z-index: 100;
     }
 
     .nav-dropdown:hover .nav-dropdown-menu {
         opacity: 1;
         visibility: visible;
-        transform: translateX(0) translateY(0) scale(1);
+        transform: translateX(-50%) translateY(0) scale(1);
     }
 
-    /* Spinning underline animation - create a separate spinning element */
-    .nav-dropdown > a:not(.active):hover::before {
-        content: '';
-        position: absolute;
-        bottom: -4px;
-        left: 0;
-        right: 0;
-        height: 2px;
-        background: linear-gradient(90deg, transparent, #d946ef, transparent);
-        animation: underlineSpin 0.6s ease-in-out forwards;
-        transform-origin: center;
-    }
-
-    @keyframes underlineSpin {
-        0% {
-            opacity: 0;
-            transform: rotateZ(0deg) scaleX(0);
-        }
-        30% {
-            opacity: 1;
-            transform: rotateZ(180deg) scaleX(0.8);
-        }
-        60% {
-            transform: rotateZ(270deg) scaleX(1);
-        }
-        100% {
-            opacity: 1;
-            transform: rotateZ(360deg) scaleX(1);
-        }
+    .nav-dropdown:hover .nav-dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(-50%) translateY(0) scale(1);
     }
 
     .nav-dropdown-menu a {
@@ -278,30 +298,14 @@ main, .main-footer {
         padding: 0.75rem 1.5rem;
         color: #d1d5db;
         text-decoration: none;
-        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        transition: all 0.2s;
         position: relative;
-        transform: translateX(0);
-        opacity: 1;
-    }
-
-    /* Staggered animation for dropdown items */
-    .nav-dropdown-menu a:nth-child(1) { transition-delay: 0.05s; }
-    .nav-dropdown-menu a:nth-child(2) { transition-delay: 0.1s; }
-    .nav-dropdown-menu a:nth-child(3) { transition-delay: 0.15s; }
-
-    /* Initially hide dropdown items when menu is closed */
-    .nav-dropdown-menu:not(:hover) a {
-        transform: translateX(-10px);
-        opacity: 0.8;
     }
 
     .nav-dropdown-menu a:hover {
         color: #ffffff;
         background: rgba(168, 85, 247, 0.1);
         padding-left: 2rem;
-        transform: translateX(0) scale(1.02);
-        border-radius: 0.5rem;
-        margin: 0 0.5rem;
     }
 
     .nav-dropdown-menu a:hover::before {
@@ -310,13 +314,6 @@ main, .main-footer {
         left: 1rem;
         color: #d946ef;
         filter: drop-shadow(0 0 3px rgba(217, 70, 239, 0.6));
-        animation: arrowBounce 0.6s ease-out;
-    }
-
-    @keyframes arrowBounce {
-        0% { transform: translateX(-5px); opacity: 0; }
-        50% { transform: translateX(2px); }
-        100% { transform: translateX(0); opacity: 1; }
     }
 }
 
@@ -412,7 +409,7 @@ main, .main-footer {
     .header-button {
         display: inline-flex;
         flex-shrink: 0;
-        margin-left: auto; /* Ensure button stays on right */
+        margin-left: auto;
     }
 }
 
@@ -465,7 +462,7 @@ main, .main-footer {
     height: 100%;
     z-index: 0;
     pointer-events: none;
-    opacity: 1; /* Ensure it's visible */
+    opacity: 1;
 }
 
 .fade-in-up {
@@ -825,7 +822,7 @@ main, .main-footer {
 /* Page Hero */
 .page-hero {
     background: transparent;
-    padding: 10rem 0 4rem 0; /* Increased top padding from 8rem to 10rem */
+    padding: 10rem 0 4rem 0;
     border-bottom: 1px solid rgba(168, 85, 247, 0.2);
     text-align: center;
     position: relative;
@@ -866,13 +863,11 @@ main, .main-footer {
 
 /* Solutions Info Section */
 .solutions-info-section {
-    background: transparent; /* Make transparent to show particles */
+    background: transparent;
     padding: 4rem 0;
     position: relative;
     z-index: 1;
 }
-
-/* Remove the opaque background overlay */
 
 .solutions-info-grid {
     display: grid;
@@ -884,14 +879,13 @@ main, .main-footer {
     }
 }
 
-
 .solution-card {
-    background: rgba(10, 10, 10, 0.4); /* Much more transparent */
+    background: rgba(10, 10, 10, 0.4);
     border: 1px solid rgba(168, 85, 247, 0.2);
     border-radius: 1rem;
     overflow: hidden;
     transition: all 0.3s ease-out;
-    backdrop-filter: blur(20px); /* Increased blur for better readability */
+    backdrop-filter: blur(20px);
     position: relative;
     z-index: 2;
 }
@@ -902,7 +896,7 @@ main, .main-footer {
 }
 
 .solution-header {
-    background: rgba(168, 85, 247, 0.05); /* Much more transparent */
+    background: rgba(168, 85, 247, 0.05);
     padding: 2rem;
     display: flex;
     align-items: center;
@@ -989,7 +983,7 @@ main, .main-footer {
 
 .solution-content {
     padding: 2rem;
-    background: rgba(0, 0, 0, 0.2); /* Semi-transparent background */
+    background: rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(5px);
 }
 
@@ -1045,7 +1039,7 @@ main, .main-footer {
 }
 
 .spec-item {
-    background: rgba(168, 85, 247, 0.03); /* More transparent */
+    background: rgba(168, 85, 247, 0.03);
     padding: 1rem;
     border-radius: 0.5rem;
     border: 1px solid rgba(168, 85, 247, 0.15);
@@ -1084,7 +1078,7 @@ main, .main-footer {
 }
 
 .pricing-tier {
-    background: rgba(168, 85, 247, 0.03); /* More transparent */
+    background: rgba(168, 85, 247, 0.03);
     padding: 1.5rem;
     border-radius: 0.5rem;
     border: 1px solid rgba(168, 85, 247, 0.15);
