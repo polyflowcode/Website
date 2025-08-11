@@ -124,7 +124,7 @@ main, .main-footer {
 }
 
 .logo-image {
-    height: 125px; /* Increased to 100px */
+    height: 125px; /* Increased to 125px */
     width: auto;
     max-width: none;
     display: block;
